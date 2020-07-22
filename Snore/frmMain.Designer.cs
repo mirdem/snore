@@ -55,6 +55,7 @@
             this.darkLabel7 = new DarkUI.Controls.DarkLabel();
             this.btnSysTray = new DarkUI.Controls.DarkButton();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.btnAbout = new DarkUI.Controls.DarkButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.darkSectionPanel2.SuspendLayout();
@@ -317,12 +318,23 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // btnAbout
+            // 
+            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
+            this.btnAbout.Location = new System.Drawing.Point(12, 360);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Padding = new System.Windows.Forms.Padding(5);
+            this.btnAbout.Size = new System.Drawing.Size(45, 42);
+            this.btnAbout.TabIndex = 13;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ClientSize = new System.Drawing.Size(348, 405);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.btnSysTray);
             this.Controls.Add(this.darkLabel7);
             this.Controls.Add(this.lblCountdownSecond);
@@ -379,6 +391,7 @@
         private DarkUI.Controls.DarkLabel darkLabel7;
         private DarkUI.Controls.DarkButton btnSysTray;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private DarkUI.Controls.DarkButton btnAbout;
     }
 }
 

@@ -177,5 +177,12 @@ namespace Snore
             if (FormWindowState.Minimized == WindowState)
                 NotifyIcon();
         }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            frmAbout frmAbout = new frmAbout();
+            this.Hide();
+            frmAbout.Show();
+        }
     }
 }
