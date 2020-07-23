@@ -233,8 +233,7 @@ namespace Snore
  
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            frmAbout frmAbout = new frmAbout();
-            frmAbout.Show();
+            
         }
 
         private void btnStopAlarm_Click(object sender, EventArgs e)
@@ -299,6 +298,17 @@ namespace Snore
             textBox1.Text = KalanYazi.ToString();
 
             lblBatteryLevel.Text = textBox1.Text;
+        }
+
+        private void btnVisit_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://mirdem.wordpress.com/applications/snore/");
+        }
+
+        private void btnLinkedIn_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.linkedin.com/in/muhammed-irdem-2b5218107/");
+
         }
     }
 }

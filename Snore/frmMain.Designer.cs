@@ -57,7 +57,6 @@
             this.darkLabel7 = new DarkUI.Controls.DarkLabel();
             this.btnSysTray = new DarkUI.Controls.DarkButton();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.btnAbout = new System.Windows.Forms.Button();
             this.darkSectionPanel3 = new DarkUI.Controls.DarkSectionPanel();
             this.darkLabel4 = new DarkUI.Controls.DarkLabel();
             this.radioShutdown2 = new DarkUI.Controls.DarkRadioButton();
@@ -81,6 +80,12 @@
             this.darkLabel11 = new DarkUI.Controls.DarkLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.btnLinkedIn = new DarkUI.Controls.DarkButton();
+            this.btnVisit = new DarkUI.Controls.DarkButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.darkLabel12 = new DarkUI.Controls.DarkLabel();
+            this.darkLabel13 = new DarkUI.Controls.DarkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.darkSectionPanel2.SuspendLayout();
@@ -91,6 +96,9 @@
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
+            this.metroTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -379,18 +387,6 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // btnAbout
-            // 
-            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.Location = new System.Drawing.Point(6, 327);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(40, 32);
-            this.btnAbout.TabIndex = 14;
-            this.btnAbout.UseVisualStyleBackColor = true;
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
-            // 
             // darkSectionPanel3
             // 
             this.darkSectionPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
@@ -574,7 +570,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
             this.metroTabControl1.Location = new System.Drawing.Point(6, 37);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(345, 401);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.White;
             this.metroTabControl1.TabIndex = 15;
@@ -585,7 +581,6 @@
             // 
             this.metroTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.metroTabPage1.Controls.Add(this.darkSectionPanel1);
-            this.metroTabPage1.Controls.Add(this.btnAbout);
             this.metroTabPage1.Controls.Add(this.darkLabel5);
             this.metroTabPage1.Controls.Add(this.darkSectionPanel2);
             this.metroTabPage1.Controls.Add(this.darkLabel7);
@@ -657,6 +652,12 @@
             // 
             // metroTabPage3
             // 
+            this.metroTabPage3.Controls.Add(this.btnLinkedIn);
+            this.metroTabPage3.Controls.Add(this.btnVisit);
+            this.metroTabPage3.Controls.Add(this.pictureBox2);
+            this.metroTabPage3.Controls.Add(this.pictureBox3);
+            this.metroTabPage3.Controls.Add(this.darkLabel12);
+            this.metroTabPage3.Controls.Add(this.darkLabel13);
             this.metroTabPage3.HorizontalScrollbarBarColor = true;
             this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.HorizontalScrollbarSize = 10;
@@ -669,6 +670,71 @@
             this.metroTabPage3.VerticalScrollbarBarColor = true;
             this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage3.VerticalScrollbarSize = 10;
+            // 
+            // btnLinkedIn
+            // 
+            this.btnLinkedIn.Location = new System.Drawing.Point(3, 322);
+            this.btnLinkedIn.Name = "btnLinkedIn";
+            this.btnLinkedIn.Padding = new System.Windows.Forms.Padding(5);
+            this.btnLinkedIn.Size = new System.Drawing.Size(101, 23);
+            this.btnLinkedIn.TabIndex = 12;
+            this.btnLinkedIn.Text = "LinkedIn";
+            this.btnLinkedIn.Click += new System.EventHandler(this.btnLinkedIn_Click);
+            // 
+            // btnVisit
+            // 
+            this.btnVisit.Location = new System.Drawing.Point(3, 293);
+            this.btnVisit.Name = "btnVisit";
+            this.btnVisit.Padding = new System.Windows.Forms.Padding(5);
+            this.btnVisit.Size = new System.Drawing.Size(101, 23);
+            this.btnVisit.TabIndex = 11;
+            this.btnVisit.Text = "Visit Website";
+            this.btnVisit.Click += new System.EventHandler(this.btnVisit_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(134, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(279, 295);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
+            // 
+            // darkLabel12
+            // 
+            this.darkLabel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.darkLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel12.Location = new System.Drawing.Point(26, 178);
+            this.darkLabel12.Name = "darkLabel12";
+            this.darkLabel12.Size = new System.Drawing.Size(264, 69);
+            this.darkLabel12.TabIndex = 8;
+            this.darkLabel12.Text = "Plan when your computer will shut down or restart. Don\'t forget to check out my o" +
+    "ther apps";
+            // 
+            // darkLabel13
+            // 
+            this.darkLabel13.AutoSize = true;
+            this.darkLabel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.darkLabel13.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.darkLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel13.Location = new System.Drawing.Point(92, 127);
+            this.darkLabel13.Name = "darkLabel13";
+            this.darkLabel13.Size = new System.Drawing.Size(125, 18);
+            this.darkLabel13.TabIndex = 7;
+            this.darkLabel13.Text = "Snore from xfDev";
             // 
             // frmMain
             // 
@@ -703,6 +769,10 @@
             this.metroTabPage1.PerformLayout();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
+            this.metroTabPage3.ResumeLayout(false);
+            this.metroTabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -735,7 +805,6 @@
         private DarkUI.Controls.DarkButton btnSysTray;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private DarkUI.Controls.DarkRadioButton radioAlarm;
-        private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnStopAlarm;
         private DarkUI.Controls.DarkSectionPanel darkSectionPanel3;
         private DarkUI.Controls.DarkLabel darkLabel4;
@@ -760,6 +829,12 @@
         private DarkUI.Controls.DarkLabel darkLabel11;
         private System.Windows.Forms.TextBox textBox1;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
+        private DarkUI.Controls.DarkButton btnLinkedIn;
+        private DarkUI.Controls.DarkButton btnVisit;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private DarkUI.Controls.DarkLabel darkLabel12;
+        private DarkUI.Controls.DarkLabel darkLabel13;
     }
 }
 
