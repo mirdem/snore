@@ -55,7 +55,9 @@
             this.darkLabel7 = new DarkUI.Controls.DarkLabel();
             this.btnSysTray = new DarkUI.Controls.DarkButton();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.btnAbout = new DarkUI.Controls.DarkButton();
+            this.radioAlarm = new DarkUI.Controls.DarkRadioButton();
+            this.btnAbout = new System.Windows.Forms.Button();
+            this.btnStopAlarm = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.darkSectionPanel2.SuspendLayout();
@@ -181,6 +183,7 @@
             // 
             // darkSectionPanel2
             // 
+            this.darkSectionPanel2.Controls.Add(this.btnStopAlarm);
             this.darkSectionPanel2.Controls.Add(this.darkLabel6);
             this.darkSectionPanel2.Controls.Add(this.btnStop);
             this.darkSectionPanel2.Controls.Add(this.btnStart);
@@ -255,6 +258,7 @@
             // 
             // darkSectionPanel1
             // 
+            this.darkSectionPanel1.Controls.Add(this.radioAlarm);
             this.darkSectionPanel1.Controls.Add(this.darkLabel2);
             this.darkSectionPanel1.Controls.Add(this.radioLogOff);
             this.darkSectionPanel1.Controls.Add(this.radioLock);
@@ -263,7 +267,7 @@
             this.darkSectionPanel1.Location = new System.Drawing.Point(5, 34);
             this.darkSectionPanel1.Name = "darkSectionPanel1";
             this.darkSectionPanel1.SectionHeader = null;
-            this.darkSectionPanel1.Size = new System.Drawing.Size(340, 90);
+            this.darkSectionPanel1.Size = new System.Drawing.Size(340, 101);
             this.darkSectionPanel1.TabIndex = 10;
             // 
             // darkLabel2
@@ -318,15 +322,39 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
+            // radioAlarm
+            // 
+            this.radioAlarm.AutoSize = true;
+            this.radioAlarm.Location = new System.Drawing.Point(8, 75);
+            this.radioAlarm.Name = "radioAlarm";
+            this.radioAlarm.Size = new System.Drawing.Size(75, 17);
+            this.radioAlarm.TabIndex = 7;
+            this.radioAlarm.TabStop = true;
+            this.radioAlarm.Text = "Just Alarm";
+            // 
             // btnAbout
             // 
+            this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.Location = new System.Drawing.Point(12, 360);
+            this.btnAbout.Location = new System.Drawing.Point(8, 361);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Padding = new System.Windows.Forms.Padding(5);
-            this.btnAbout.Size = new System.Drawing.Size(45, 42);
-            this.btnAbout.TabIndex = 13;
+            this.btnAbout.Size = new System.Drawing.Size(40, 32);
+            this.btnAbout.TabIndex = 14;
+            this.btnAbout.UseVisualStyleBackColor = true;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // btnStopAlarm
+            // 
+            this.btnStopAlarm.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnStopAlarm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStopAlarm.Image = ((System.Drawing.Image)(resources.GetObject("btnStopAlarm.Image")));
+            this.btnStopAlarm.Location = new System.Drawing.Point(220, 53);
+            this.btnStopAlarm.Name = "btnStopAlarm";
+            this.btnStopAlarm.Size = new System.Drawing.Size(30, 29);
+            this.btnStopAlarm.TabIndex = 15;
+            this.btnStopAlarm.UseVisualStyleBackColor = true;
+            this.btnStopAlarm.Click += new System.EventHandler(this.btnStopAlarm_Click);
             // 
             // frmMain
             // 
@@ -391,7 +419,9 @@
         private DarkUI.Controls.DarkLabel darkLabel7;
         private DarkUI.Controls.DarkButton btnSysTray;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private DarkUI.Controls.DarkButton btnAbout;
+        private DarkUI.Controls.DarkRadioButton radioAlarm;
+        private System.Windows.Forms.Button btnAbout;
+        private System.Windows.Forms.Button btnStopAlarm;
     }
 }
 

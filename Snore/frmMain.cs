@@ -22,7 +22,7 @@ namespace Snore
         public static extern void LockWorkStation();
         [DllImport("user32")]
         public static extern bool ExitWindowsEx(uint uFlags, uint dwReason);
-
+        System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
@@ -67,6 +67,13 @@ namespace Snore
                     if (radioLock.Checked == true)
                 {
                     LockWorkStation();
+                }
+                else
+                    if(radioAlarm.Checked==true)
+                {
+                    btnStopAlarm.Visible = true;
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"data\alarm.wav");
+                    player.Play();
                 }
             }
             catch
@@ -137,7 +144,7 @@ namespace Snore
         {
             try
             { 
-            if(radioShutdown.Checked==false && radioRestart.Checked==false && radioLogOff.Checked==false && radioLock.Checked==false)
+            if(radioShutdown.Checked==false && radioRestart.Checked==false && radioLogOff.Checked==false && radioLock.Checked==false && radioAlarm.Checked==false)
             {
                 MessageBox.Show("Please Select the action!", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -177,12 +184,18 @@ namespace Snore
             if (FormWindowState.Minimized == WindowState)
                 NotifyIcon();
         }
-
+ 
         private void btnAbout_Click(object sender, EventArgs e)
         {
             frmAbout frmAbout = new frmAbout();
             this.Hide();
             frmAbout.Show();
+        }
+
+        private void btnStopAlarm_Click(object sender, EventArgs e)
+        {
+            player.Stop();
+            btnStopAlarm.Visible = false;
         }
     }
 }
