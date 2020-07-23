@@ -86,6 +86,12 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.darkLabel12 = new DarkUI.Controls.DarkLabel();
             this.darkLabel13 = new DarkUI.Controls.DarkLabel();
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.chkWinStarts = new DarkUI.Controls.DarkCheckBox();
+            this.btnSave = new DarkUI.Controls.DarkButton();
+            this.txtWinStarts = new System.Windows.Forms.TextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblVersion = new DarkUI.Controls.DarkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.darkSectionPanel2.SuspendLayout();
@@ -99,6 +105,7 @@
             this.metroTabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.metroTabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -108,9 +115,9 @@
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.darkLabel1);
-            this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(351, 31);
+            this.panel1.Size = new System.Drawing.Size(361, 24);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -118,22 +125,22 @@
             // 
             // btnMinimize
             // 
-            this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(301, 7);
+            this.btnMinimize.Location = new System.Drawing.Point(315, 1);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Padding = new System.Windows.Forms.Padding(5);
             this.btnMinimize.Size = new System.Drawing.Size(24, 24);
             this.btnMinimize.TabIndex = 3;
+            this.btnMinimize.Text = "_";
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(326, 7);
+            this.btnExit.Location = new System.Drawing.Point(337, 1);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5);
             this.btnExit.Size = new System.Drawing.Size(24, 24);
             this.btnExit.TabIndex = 1;
+            this.btnExit.Text = "X";
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // pictureBox1
@@ -141,7 +148,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(44, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.Size = new System.Drawing.Size(24, 22);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -151,7 +158,7 @@
             this.darkLabel1.AutoSize = true;
             this.darkLabel1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(3, 9);
+            this.darkLabel1.Location = new System.Drawing.Point(3, 7);
             this.darkLabel1.Name = "darkLabel1";
             this.darkLabel1.Size = new System.Drawing.Size(45, 18);
             this.darkLabel1.TabIndex = 1;
@@ -301,7 +308,7 @@
             // 
             // btnCloseApp
             // 
-            this.btnCloseApp.Location = new System.Drawing.Point(259, 336);
+            this.btnCloseApp.Location = new System.Drawing.Point(269, 333);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Padding = new System.Windows.Forms.Padding(5);
             this.btnCloseApp.Size = new System.Drawing.Size(75, 23);
@@ -374,7 +381,7 @@
             // 
             // btnSysTray
             // 
-            this.btnSysTray.Location = new System.Drawing.Point(178, 336);
+            this.btnSysTray.Location = new System.Drawing.Point(188, 333);
             this.btnSysTray.Name = "btnSysTray";
             this.btnSysTray.Padding = new System.Windows.Forms.Padding(5);
             this.btnSysTray.Size = new System.Drawing.Size(75, 23);
@@ -567,11 +574,13 @@
             // 
             this.metroTabControl1.Controls.Add(this.metroTabPage1);
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
+            this.metroTabControl1.Controls.Add(this.tabPage1);
+            this.metroTabControl1.Controls.Add(this.metroTabPage4);
             this.metroTabControl1.Controls.Add(this.metroTabPage3);
-            this.metroTabControl1.Location = new System.Drawing.Point(6, 37);
+            this.metroTabControl1.Location = new System.Drawing.Point(6, 27);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(345, 401);
+            this.metroTabControl1.SelectedIndex = 4;
+            this.metroTabControl1.Size = new System.Drawing.Size(355, 401);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.White;
             this.metroTabControl1.TabIndex = 15;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -594,7 +603,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(337, 359);
+            this.metroTabPage1.Size = new System.Drawing.Size(347, 359);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Main";
             this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -616,7 +625,7 @@
             this.metroTabPage2.HorizontalScrollbarSize = 10;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(337, 359);
+            this.metroTabPage2.Size = new System.Drawing.Size(347, 359);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Battery Triggered";
             this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -652,6 +661,7 @@
             // 
             // metroTabPage3
             // 
+            this.metroTabPage3.Controls.Add(this.lblVersion);
             this.metroTabPage3.Controls.Add(this.btnLinkedIn);
             this.metroTabPage3.Controls.Add(this.btnVisit);
             this.metroTabPage3.Controls.Add(this.pictureBox2);
@@ -663,7 +673,7 @@
             this.metroTabPage3.HorizontalScrollbarSize = 10;
             this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(337, 359);
+            this.metroTabPage3.Size = new System.Drawing.Size(347, 359);
             this.metroTabPage3.TabIndex = 2;
             this.metroTabPage3.Text = "About";
             this.metroTabPage3.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -717,7 +727,7 @@
             // 
             this.darkLabel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.darkLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel12.Location = new System.Drawing.Point(26, 178);
+            this.darkLabel12.Location = new System.Drawing.Point(31, 148);
             this.darkLabel12.Name = "darkLabel12";
             this.darkLabel12.Size = new System.Drawing.Size(264, 69);
             this.darkLabel12.TabIndex = 8;
@@ -730,18 +740,83 @@
             this.darkLabel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.darkLabel13.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.darkLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel13.Location = new System.Drawing.Point(92, 127);
+            this.darkLabel13.Location = new System.Drawing.Point(97, 95);
             this.darkLabel13.Name = "darkLabel13";
             this.darkLabel13.Size = new System.Drawing.Size(125, 18);
             this.darkLabel13.TabIndex = 7;
             this.darkLabel13.Text = "Snore from xfDev";
+            // 
+            // metroTabPage4
+            // 
+            this.metroTabPage4.Controls.Add(this.txtWinStarts);
+            this.metroTabPage4.Controls.Add(this.btnSave);
+            this.metroTabPage4.Controls.Add(this.chkWinStarts);
+            this.metroTabPage4.HorizontalScrollbarBarColor = true;
+            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.HorizontalScrollbarSize = 10;
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage4.Name = "metroTabPage4";
+            this.metroTabPage4.Size = new System.Drawing.Size(347, 359);
+            this.metroTabPage4.TabIndex = 3;
+            this.metroTabPage4.Text = "Settings";
+            this.metroTabPage4.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage4.VerticalScrollbarBarColor = true;
+            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.VerticalScrollbarSize = 10;
+            // 
+            // chkWinStarts
+            // 
+            this.chkWinStarts.AutoSize = true;
+            this.chkWinStarts.Location = new System.Drawing.Point(3, 26);
+            this.chkWinStarts.Name = "chkWinStarts";
+            this.chkWinStarts.Size = new System.Drawing.Size(181, 17);
+            this.chkWinStarts.TabIndex = 2;
+            this.chkWinStarts.Text = "Start when the computer starts.";
+            this.chkWinStarts.CheckedChanged += new System.EventHandler(this.chkWinStarts_CheckedChanged);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(240, 299);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Padding = new System.Windows.Forms.Padding(5);
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            // 
+            // txtWinStarts
+            // 
+            this.txtWinStarts.Location = new System.Drawing.Point(360, 188);
+            this.txtWinStarts.Name = "txtWinStarts";
+            this.txtWinStarts.Size = new System.Drawing.Size(100, 21);
+            this.txtWinStarts.TabIndex = 4;
+            this.txtWinStarts.Visible = false;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.tabPage1.Location = new System.Drawing.Point(4, 38);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Size = new System.Drawing.Size(347, 359);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Schedule";
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lblVersion.Location = new System.Drawing.Point(134, 203);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(13, 13);
+            this.lblVersion.TabIndex = 13;
+            this.lblVersion.Text = "V";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ClientSize = new System.Drawing.Size(351, 443);
+            this.ClientSize = new System.Drawing.Size(361, 431);
             this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -773,6 +848,8 @@
             this.metroTabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.metroTabPage4.ResumeLayout(false);
+            this.metroTabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -835,6 +912,12 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private DarkUI.Controls.DarkLabel darkLabel12;
         private DarkUI.Controls.DarkLabel darkLabel13;
+        private MetroFramework.Controls.MetroTabPage metroTabPage4;
+        private DarkUI.Controls.DarkCheckBox chkWinStarts;
+        private DarkUI.Controls.DarkButton btnSave;
+        private System.Windows.Forms.TextBox txtWinStarts;
+        private System.Windows.Forms.TabPage tabPage1;
+        private DarkUI.Controls.DarkLabel lblVersion;
     }
 }
 

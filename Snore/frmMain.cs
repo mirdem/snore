@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using Microsoft.Win32;
+
 namespace Snore
 {
     public partial class frmMain : Form
@@ -20,7 +22,8 @@ namespace Snore
         [DllImport("Powrprof.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         public static extern bool SetSuspendState(bool hiberate, bool forceCritical, bool disableWakeEvent);
 
-   
+        string ProgramAdi = "Snore";
+
         [DllImport("user32")]
         public static extern void LockWorkStation();
         [DllImport("user32")]
@@ -49,7 +52,21 @@ namespace Snore
             this.Show();
             MyIcon.Visible = false;
         }
+        void checkStarts()
+        {
+            try
+            {
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                if (key.GetValue(ProgramAdi).ToString() == "\"" + Application.ExecutablePath + "\"")
+                { // Eğer regeditte varsa, checkbox ı işaretle
+                    chkWinStarts.Checked = true;
+                }
+            }
+            catch
+            {
 
+            }
+        }
         void BataryaIslemYap()
         {
             darkButton1.Enabled = true;
@@ -215,20 +232,23 @@ namespace Snore
         {
             WindowState = FormWindowState.Minimized;
 
+            if (FormWindowState.Minimized == WindowState)
+                NotifyIcon();
+
         }
 
         NotifyIcon MyIcon = new NotifyIcon();
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            checkStarts();
             MyIcon.Icon = new Icon(@"data\images\sleep.ico");
             metroTabControl1.SelectedIndex = 0;
+            lblVersion.Text = "Version " + this.ProductVersion;
         }
 
         private void frmMain_Resize(object sender, EventArgs e)
         {
-            if (FormWindowState.Minimized == WindowState)
-                NotifyIcon();
         }
  
         private void btnAbout_Click(object sender, EventArgs e)
@@ -309,6 +329,22 @@ namespace Snore
         {
             System.Diagnostics.Process.Start("https://www.linkedin.com/in/muhammed-irdem-2b5218107/");
 
+        }
+
+        private void chkWinStarts_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkWinStarts.Checked)
+            { //işaretlendi ise Regedit e açılışta çalıştır olarak ekle
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                key.SetValue(ProgramAdi, "\"" + Application.ExecutablePath + "\"");
+                txtWinStarts.Text = "True";
+            }
+            else
+            {  //işaret kaldırıldı ise Regeditten açılışta çalıştırılacaklardan kaldır
+                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
+                key.DeleteValue(ProgramAdi);
+                txtWinStarts.Text = "False";
+            }
         }
     }
 }
