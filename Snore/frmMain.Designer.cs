@@ -58,15 +58,11 @@
             this.btnSysTray = new DarkUI.Controls.DarkButton();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.btnAbout = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.darkSectionPanel3 = new DarkUI.Controls.DarkSectionPanel();
             this.darkLabel4 = new DarkUI.Controls.DarkLabel();
             this.radioShutdown2 = new DarkUI.Controls.DarkRadioButton();
-            this.RadioRestart2 = new DarkUI.Controls.DarkRadioButton();
-            this.radioLock2 = new DarkUI.Controls.DarkRadioButton();
-            this.radioLogOff2 = new DarkUI.Controls.DarkRadioButton();
+            this.radioHibernate = new DarkUI.Controls.DarkRadioButton();
+            this.radioStandby = new DarkUI.Controls.DarkRadioButton();
             this.radioJustAlarm2 = new DarkUI.Controls.DarkRadioButton();
             this.darkLabel8 = new DarkUI.Controls.DarkLabel();
             this.darkButton1 = new DarkUI.Controls.DarkButton();
@@ -77,16 +73,24 @@
             this.lblBatteryLevel = new DarkUI.Controls.DarkLabel();
             this.darkLabel10 = new DarkUI.Controls.DarkLabel();
             this.timerBattery = new System.Windows.Forms.Timer(this.components);
+            this.btnStopAlarm2 = new System.Windows.Forms.Button();
+            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.CheckBattery = new System.Windows.Forms.Timer(this.components);
+            this.darkLabel11 = new DarkUI.Controls.DarkLabel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.darkSectionPanel2.SuspendLayout();
             this.darkSectionPanel1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.darkSectionPanel3.SuspendLayout();
             this.darkSectionPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDown1)).BeginInit();
+            this.metroTabControl1.SuspendLayout();
+            this.metroTabPage1.SuspendLayout();
+            this.metroTabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,9 +100,9 @@
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.darkLabel1);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(351, 30);
+            this.panel1.Size = new System.Drawing.Size(351, 31);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -107,7 +111,7 @@
             // btnMinimize
             // 
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(298, 7);
+            this.btnMinimize.Location = new System.Drawing.Point(301, 7);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Padding = new System.Windows.Forms.Padding(5);
             this.btnMinimize.Size = new System.Drawing.Size(24, 24);
@@ -117,7 +121,7 @@
             // btnExit
             // 
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(323, 7);
+            this.btnExit.Location = new System.Drawing.Point(326, 7);
             this.btnExit.Name = "btnExit";
             this.btnExit.Padding = new System.Windows.Forms.Padding(5);
             this.btnExit.Size = new System.Drawing.Size(24, 24);
@@ -214,7 +218,7 @@
             this.darkSectionPanel2.Controls.Add(this.btnStart);
             this.darkSectionPanel2.Controls.Add(this.darkLabel3);
             this.darkSectionPanel2.Controls.Add(this.txtTime);
-            this.darkSectionPanel2.Location = new System.Drawing.Point(8, 123);
+            this.darkSectionPanel2.Location = new System.Drawing.Point(3, 120);
             this.darkSectionPanel2.Name = "darkSectionPanel2";
             this.darkSectionPanel2.SectionHeader = null;
             this.darkSectionPanel2.Size = new System.Drawing.Size(340, 100);
@@ -225,9 +229,9 @@
             this.btnStopAlarm.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnStopAlarm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStopAlarm.Image = ((System.Drawing.Image)(resources.GetObject("btnStopAlarm.Image")));
-            this.btnStopAlarm.Location = new System.Drawing.Point(220, 53);
+            this.btnStopAlarm.Location = new System.Drawing.Point(220, 51);
             this.btnStopAlarm.Name = "btnStopAlarm";
-            this.btnStopAlarm.Size = new System.Drawing.Size(30, 29);
+            this.btnStopAlarm.Size = new System.Drawing.Size(30, 30);
             this.btnStopAlarm.TabIndex = 15;
             this.btnStopAlarm.UseVisualStyleBackColor = true;
             this.btnStopAlarm.Visible = false;
@@ -266,9 +270,10 @@
             // lblCountdownMin
             // 
             this.lblCountdownMin.AutoSize = true;
+            this.lblCountdownMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.lblCountdownMin.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblCountdownMin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lblCountdownMin.Location = new System.Drawing.Point(129, 279);
+            this.lblCountdownMin.Location = new System.Drawing.Point(124, 276);
             this.lblCountdownMin.Name = "lblCountdownMin";
             this.lblCountdownMin.Size = new System.Drawing.Size(39, 29);
             this.lblCountdownMin.TabIndex = 7;
@@ -277,9 +282,10 @@
             // darkLabel5
             // 
             this.darkLabel5.AutoSize = true;
+            this.darkLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.darkLabel5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel5.Location = new System.Drawing.Point(119, 253);
+            this.darkLabel5.Location = new System.Drawing.Point(114, 250);
             this.darkLabel5.Name = "darkLabel5";
             this.darkLabel5.Size = new System.Drawing.Size(102, 16);
             this.darkLabel5.TabIndex = 8;
@@ -287,7 +293,7 @@
             // 
             // btnCloseApp
             // 
-            this.btnCloseApp.Location = new System.Drawing.Point(264, 339);
+            this.btnCloseApp.Location = new System.Drawing.Point(259, 336);
             this.btnCloseApp.Name = "btnCloseApp";
             this.btnCloseApp.Padding = new System.Windows.Forms.Padding(5);
             this.btnCloseApp.Size = new System.Drawing.Size(75, 23);
@@ -303,7 +309,7 @@
             this.darkSectionPanel1.Controls.Add(this.radioLock);
             this.darkSectionPanel1.Controls.Add(this.radioRestart);
             this.darkSectionPanel1.Controls.Add(this.radioShutdown);
-            this.darkSectionPanel1.Location = new System.Drawing.Point(8, 3);
+            this.darkSectionPanel1.Location = new System.Drawing.Point(3, 4);
             this.darkSectionPanel1.Name = "darkSectionPanel1";
             this.darkSectionPanel1.SectionHeader = null;
             this.darkSectionPanel1.Size = new System.Drawing.Size(340, 101);
@@ -337,9 +343,10 @@
             // lblCountdownSecond
             // 
             this.lblCountdownSecond.AutoSize = true;
+            this.lblCountdownSecond.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.lblCountdownSecond.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblCountdownSecond.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lblCountdownSecond.Location = new System.Drawing.Point(182, 279);
+            this.lblCountdownSecond.Location = new System.Drawing.Point(177, 276);
             this.lblCountdownSecond.Name = "lblCountdownSecond";
             this.lblCountdownSecond.Size = new System.Drawing.Size(39, 29);
             this.lblCountdownSecond.TabIndex = 11;
@@ -348,9 +355,10 @@
             // darkLabel7
             // 
             this.darkLabel7.AutoSize = true;
+            this.darkLabel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.darkLabel7.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.darkLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel7.Location = new System.Drawing.Point(164, 278);
+            this.darkLabel7.Location = new System.Drawing.Point(159, 275);
             this.darkLabel7.Name = "darkLabel7";
             this.darkLabel7.Size = new System.Drawing.Size(21, 29);
             this.darkLabel7.TabIndex = 12;
@@ -358,7 +366,7 @@
             // 
             // btnSysTray
             // 
-            this.btnSysTray.Location = new System.Drawing.Point(183, 339);
+            this.btnSysTray.Location = new System.Drawing.Point(178, 336);
             this.btnSysTray.Name = "btnSysTray";
             this.btnSysTray.Padding = new System.Windows.Forms.Padding(5);
             this.btnSysTray.Size = new System.Drawing.Size(75, 23);
@@ -376,66 +384,22 @@
             this.btnAbout.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbout.Image = ((System.Drawing.Image)(resources.GetObject("btnAbout.Image")));
-            this.btnAbout.Location = new System.Drawing.Point(11, 330);
+            this.btnAbout.Location = new System.Drawing.Point(6, 327);
             this.btnAbout.Name = "btnAbout";
             this.btnAbout.Size = new System.Drawing.Size(40, 32);
             this.btnAbout.TabIndex = 14;
             this.btnAbout.UseVisualStyleBackColor = true;
             this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 33);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(351, 395);
-            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tabControl1.TabIndex = 15;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.tabPage1.Controls.Add(this.darkSectionPanel1);
-            this.tabPage1.Controls.Add(this.btnAbout);
-            this.tabPage1.Controls.Add(this.darkSectionPanel2);
-            this.tabPage1.Controls.Add(this.btnSysTray);
-            this.tabPage1.Controls.Add(this.lblCountdownMin);
-            this.tabPage1.Controls.Add(this.darkLabel7);
-            this.tabPage1.Controls.Add(this.darkLabel5);
-            this.tabPage1.Controls.Add(this.lblCountdownSecond);
-            this.tabPage1.Controls.Add(this.btnCloseApp);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(343, 369);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Main";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.tabPage2.Controls.Add(this.lblBatteryLevel);
-            this.tabPage2.Controls.Add(this.darkLabel9);
-            this.tabPage2.Controls.Add(this.darkSectionPanel4);
-            this.tabPage2.Controls.Add(this.darkSectionPanel3);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(343, 369);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Battery Triggered";
-            // 
             // darkSectionPanel3
             // 
-            this.darkSectionPanel3.Controls.Add(this.RadioRestart2);
-            this.darkSectionPanel3.Controls.Add(this.radioLock2);
+            this.darkSectionPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.darkSectionPanel3.Controls.Add(this.radioHibernate);
             this.darkSectionPanel3.Controls.Add(this.radioShutdown2);
-            this.darkSectionPanel3.Controls.Add(this.radioLogOff2);
+            this.darkSectionPanel3.Controls.Add(this.radioStandby);
             this.darkSectionPanel3.Controls.Add(this.radioJustAlarm2);
             this.darkSectionPanel3.Controls.Add(this.darkLabel4);
-            this.darkSectionPanel3.Location = new System.Drawing.Point(6, 6);
+            this.darkSectionPanel3.Location = new System.Drawing.Point(2, 12);
             this.darkSectionPanel3.Name = "darkSectionPanel3";
             this.darkSectionPanel3.SectionHeader = null;
             this.darkSectionPanel3.Size = new System.Drawing.Size(331, 107);
@@ -461,38 +425,29 @@
             this.radioShutdown2.TabStop = true;
             this.radioShutdown2.Text = "Shutdown";
             // 
-            // RadioRestart2
+            // radioHibernate
             // 
-            this.RadioRestart2.AutoSize = true;
-            this.RadioRestart2.Location = new System.Drawing.Point(87, 46);
-            this.RadioRestart2.Name = "RadioRestart2";
-            this.RadioRestart2.Size = new System.Drawing.Size(64, 17);
-            this.RadioRestart2.TabIndex = 2;
-            this.RadioRestart2.TabStop = true;
-            this.RadioRestart2.Text = " Restart";
+            this.radioHibernate.AutoSize = true;
+            this.radioHibernate.Location = new System.Drawing.Point(87, 46);
+            this.radioHibernate.Name = "radioHibernate";
+            this.radioHibernate.Size = new System.Drawing.Size(72, 17);
+            this.radioHibernate.TabIndex = 2;
+            this.radioHibernate.TabStop = true;
+            this.radioHibernate.Text = "Hibernate";
             // 
-            // radioLock2
+            // radioStandby
             // 
-            this.radioLock2.AutoSize = true;
-            this.radioLock2.Location = new System.Drawing.Point(254, 46);
-            this.radioLock2.Name = "radioLock2";
-            this.radioLock2.Size = new System.Drawing.Size(46, 17);
-            this.radioLock2.TabIndex = 3;
-            this.radioLock2.Text = "Lock";
-            // 
-            // radioLogOff2
-            // 
-            this.radioLogOff2.AutoSize = true;
-            this.radioLogOff2.Location = new System.Drawing.Point(170, 46);
-            this.radioLogOff2.Name = "radioLogOff2";
-            this.radioLogOff2.Size = new System.Drawing.Size(61, 17);
-            this.radioLogOff2.TabIndex = 4;
-            this.radioLogOff2.Text = "Log Off";
+            this.radioStandby.AutoSize = true;
+            this.radioStandby.Location = new System.Drawing.Point(170, 46);
+            this.radioStandby.Name = "radioStandby";
+            this.radioStandby.Size = new System.Drawing.Size(65, 17);
+            this.radioStandby.TabIndex = 4;
+            this.radioStandby.Text = "Standby";
             // 
             // radioJustAlarm2
             // 
             this.radioJustAlarm2.AutoSize = true;
-            this.radioJustAlarm2.Location = new System.Drawing.Point(121, 86);
+            this.radioJustAlarm2.Location = new System.Drawing.Point(241, 46);
             this.radioJustAlarm2.Name = "radioJustAlarm2";
             this.radioJustAlarm2.Size = new System.Drawing.Size(75, 17);
             this.radioJustAlarm2.TabIndex = 5;
@@ -530,12 +485,13 @@
             // 
             // darkSectionPanel4
             // 
+            this.darkSectionPanel4.Controls.Add(this.btnStopAlarm2);
             this.darkSectionPanel4.Controls.Add(this.darkLabel10);
             this.darkSectionPanel4.Controls.Add(this.darkNumericUpDown1);
             this.darkSectionPanel4.Controls.Add(this.darkButton2);
             this.darkSectionPanel4.Controls.Add(this.darkButton1);
             this.darkSectionPanel4.Controls.Add(this.darkLabel8);
-            this.darkSectionPanel4.Location = new System.Drawing.Point(6, 129);
+            this.darkSectionPanel4.Location = new System.Drawing.Point(2, 135);
             this.darkSectionPanel4.Name = "darkSectionPanel4";
             this.darkSectionPanel4.SectionHeader = null;
             this.darkSectionPanel4.Size = new System.Drawing.Size(331, 107);
@@ -561,9 +517,10 @@
             // darkLabel9
             // 
             this.darkLabel9.AutoSize = true;
+            this.darkLabel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.darkLabel9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.darkLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel9.Location = new System.Drawing.Point(113, 260);
+            this.darkLabel9.Location = new System.Drawing.Point(109, 266);
             this.darkLabel9.Name = "darkLabel9";
             this.darkLabel9.Size = new System.Drawing.Size(112, 14);
             this.darkLabel9.TabIndex = 6;
@@ -572,9 +529,10 @@
             // lblBatteryLevel
             // 
             this.lblBatteryLevel.AutoSize = true;
+            this.lblBatteryLevel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.lblBatteryLevel.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblBatteryLevel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lblBatteryLevel.Location = new System.Drawing.Point(151, 288);
+            this.lblBatteryLevel.Location = new System.Drawing.Point(147, 294);
             this.lblBatteryLevel.Name = "lblBatteryLevel";
             this.lblBatteryLevel.Size = new System.Drawing.Size(38, 18);
             this.lblBatteryLevel.TabIndex = 7;
@@ -594,14 +552,131 @@
             // timerBattery
             // 
             this.timerBattery.Interval = 1000;
+            this.timerBattery.Tick += new System.EventHandler(this.timerBattery_Tick);
+            // 
+            // btnStopAlarm2
+            // 
+            this.btnStopAlarm2.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnStopAlarm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStopAlarm2.Image = ((System.Drawing.Image)(resources.GetObject("btnStopAlarm2.Image")));
+            this.btnStopAlarm2.Location = new System.Drawing.Point(216, 52);
+            this.btnStopAlarm2.Name = "btnStopAlarm2";
+            this.btnStopAlarm2.Size = new System.Drawing.Size(30, 30);
+            this.btnStopAlarm2.TabIndex = 7;
+            this.btnStopAlarm2.UseVisualStyleBackColor = true;
+            this.btnStopAlarm2.Visible = false;
+            this.btnStopAlarm2.Click += new System.EventHandler(this.btnStopAlarm2_Click);
+            // 
+            // metroTabControl1
+            // 
+            this.metroTabControl1.Controls.Add(this.metroTabPage1);
+            this.metroTabControl1.Controls.Add(this.metroTabPage2);
+            this.metroTabControl1.Controls.Add(this.metroTabPage3);
+            this.metroTabControl1.Location = new System.Drawing.Point(6, 37);
+            this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.SelectedIndex = 2;
+            this.metroTabControl1.Size = new System.Drawing.Size(345, 401);
+            this.metroTabControl1.Style = MetroFramework.MetroColorStyle.White;
+            this.metroTabControl1.TabIndex = 15;
+            this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabControl1.UseSelectable = true;
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.metroTabPage1.Controls.Add(this.darkSectionPanel1);
+            this.metroTabPage1.Controls.Add(this.btnAbout);
+            this.metroTabPage1.Controls.Add(this.darkLabel5);
+            this.metroTabPage1.Controls.Add(this.darkSectionPanel2);
+            this.metroTabPage1.Controls.Add(this.darkLabel7);
+            this.metroTabPage1.Controls.Add(this.lblCountdownSecond);
+            this.metroTabPage1.Controls.Add(this.btnSysTray);
+            this.metroTabPage1.Controls.Add(this.lblCountdownMin);
+            this.metroTabPage1.Controls.Add(this.btnCloseApp);
+            this.metroTabPage1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(337, 359);
+            this.metroTabPage1.TabIndex = 0;
+            this.metroTabPage1.Text = "Main";
+            this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
+            // 
+            // metroTabPage2
+            // 
+            this.metroTabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.metroTabPage2.Controls.Add(this.textBox1);
+            this.metroTabPage2.Controls.Add(this.darkLabel11);
+            this.metroTabPage2.Controls.Add(this.lblBatteryLevel);
+            this.metroTabPage2.Controls.Add(this.darkLabel9);
+            this.metroTabPage2.Controls.Add(this.darkSectionPanel4);
+            this.metroTabPage2.Controls.Add(this.darkSectionPanel3);
+            this.metroTabPage2.HorizontalScrollbarBarColor = true;
+            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.HorizontalScrollbarSize = 10;
+            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage2.Name = "metroTabPage2";
+            this.metroTabPage2.Size = new System.Drawing.Size(337, 359);
+            this.metroTabPage2.TabIndex = 1;
+            this.metroTabPage2.Text = "Battery Triggered";
+            this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage2.VerticalScrollbarBarColor = true;
+            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // CheckBattery
+            // 
+            this.CheckBattery.Enabled = true;
+            this.CheckBattery.Interval = 500;
+            this.CheckBattery.Tick += new System.EventHandler(this.CheckBattery_Tick);
+            // 
+            // darkLabel11
+            // 
+            this.darkLabel11.AutoSize = true;
+            this.darkLabel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.darkLabel11.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.darkLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel11.Location = new System.Drawing.Point(127, 294);
+            this.darkLabel11.Name = "darkLabel11";
+            this.darkLabel11.Size = new System.Drawing.Size(23, 18);
+            this.darkLabel11.TabIndex = 8;
+            this.darkLabel11.Text = "%";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(233, 295);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Visible = false;
+            // 
+            // metroTabPage3
+            // 
+            this.metroTabPage3.HorizontalScrollbarBarColor = true;
+            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.HorizontalScrollbarSize = 10;
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(337, 359);
+            this.metroTabPage3.TabIndex = 2;
+            this.metroTabPage3.Text = "About";
+            this.metroTabPage3.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroTabPage3.VerticalScrollbarBarColor = true;
+            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.VerticalScrollbarSize = 10;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.ClientSize = new System.Drawing.Size(356, 428);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(351, 443);
+            this.Controls.Add(this.metroTabControl1);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -618,16 +693,16 @@
             this.darkSectionPanel2.PerformLayout();
             this.darkSectionPanel1.ResumeLayout(false);
             this.darkSectionPanel1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.darkSectionPanel3.ResumeLayout(false);
             this.darkSectionPanel3.PerformLayout();
             this.darkSectionPanel4.ResumeLayout(false);
             this.darkSectionPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDown1)).EndInit();
+            this.metroTabControl1.ResumeLayout(false);
+            this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage1.PerformLayout();
+            this.metroTabPage2.ResumeLayout(false);
+            this.metroTabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -662,15 +737,11 @@
         private DarkUI.Controls.DarkRadioButton radioAlarm;
         private System.Windows.Forms.Button btnAbout;
         private System.Windows.Forms.Button btnStopAlarm;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
         private DarkUI.Controls.DarkSectionPanel darkSectionPanel3;
         private DarkUI.Controls.DarkLabel darkLabel4;
-        private DarkUI.Controls.DarkRadioButton RadioRestart2;
-        private DarkUI.Controls.DarkRadioButton radioLock2;
+        private DarkUI.Controls.DarkRadioButton radioHibernate;
         private DarkUI.Controls.DarkRadioButton radioShutdown2;
-        private DarkUI.Controls.DarkRadioButton radioLogOff2;
+        private DarkUI.Controls.DarkRadioButton radioStandby;
         private DarkUI.Controls.DarkRadioButton radioJustAlarm2;
         private DarkUI.Controls.DarkSectionPanel darkSectionPanel4;
         private DarkUI.Controls.DarkButton darkButton2;
@@ -681,6 +752,14 @@
         private DarkUI.Controls.DarkLabel darkLabel9;
         private DarkUI.Controls.DarkLabel darkLabel10;
         private System.Windows.Forms.Timer timerBattery;
+        private System.Windows.Forms.Button btnStopAlarm2;
+        private MetroFramework.Controls.MetroTabControl metroTabControl1;
+        private MetroFramework.Controls.MetroTabPage metroTabPage1;
+        private MetroFramework.Controls.MetroTabPage metroTabPage2;
+        private System.Windows.Forms.Timer CheckBattery;
+        private DarkUI.Controls.DarkLabel darkLabel11;
+        private System.Windows.Forms.TextBox textBox1;
+        private MetroFramework.Controls.MetroTabPage metroTabPage3;
     }
 }
 

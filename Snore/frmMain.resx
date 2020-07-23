@@ -229,8 +229,25 @@
         SUVORK5CYII=
 </value>
   </data>
+  <data name="btnStopAlarm2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAHZSURBVEhLpVQ9SwNBEE2vhfaKKGJqP0CwtLDxLwjuba7R
+        /6CJteDd7iUBwVZTCAFTWFhroX9BLbQRwdzucYJRizhztxKSmzNn7sErkp1573Z39hWyQu/UJwPuFAPb
+        W1DbzoT5Ox8CJtY0FyfAZ81lt4+WfPK5PA4sZ9WUZ4cuVed9S1wlRFOouHupbDlr2v9GwOWmZm5ICf1J
+        5mrY6YaRoYHiPpPfpEAG+sz9SjXBYxnpy5NUPq/OGNke/nPmQ2nJlpGNEU9LsjCsNLqd1l334/yGJK6F
+        +6eJvpjeipGH44lGMVn07ra6YRkESvCbYFg5i2qoXsVl3chHBsk5B0YGqV8IBuV0A3gjj7E4vFCqAJnH
+        APm6Wx2H0XSK1CIyr4G2juYKmC3kIjCvQfS6MbioRWReg5etw7H4HiC4qII8Bj4T95E4AlORKooMQETb
+        HsnwoJFqoCzhGXl4aBC5VBGKd1q38KiuacJauEfvUHGxaORjYORShSOyaWR7wBuPI5dsyExI4/abLaaM
+        bD8wauPIpZuHEe7yUzG5buRooAkUq8HmYfQt1x8q/gvMc83EBSWUwmab1aZNe3ZoWyzDuNVg6w+Dojjn
+        OIqKeUumPB8wuHAQkFGIZUKh8ANDrsfiGzOu+gAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="timerBattery.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>217, 17</value>
+  </metadata>
+  <metadata name="CheckBattery.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>336, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>51</value>

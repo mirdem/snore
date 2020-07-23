@@ -17,7 +17,10 @@ namespace Snore
         {
             InitializeComponent();
         }
+        [DllImport("Powrprof.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        public static extern bool SetSuspendState(bool hiberate, bool forceCritical, bool disableWakeEvent);
 
+   
         [DllImport("user32")]
         public static extern void LockWorkStation();
         [DllImport("user32")]
@@ -46,6 +49,43 @@ namespace Snore
             this.Show();
             MyIcon.Visible = false;
         }
+
+        void BataryaIslemYap()
+        {
+            darkButton1.Enabled = true;
+
+            try
+            {
+                if (radioShutdown2.Checked == true)
+                {
+                    Process.Start("shutdown", "/s /t 0");
+                }
+                else
+              if (radioHibernate.Checked == true)
+                {
+                    SetSuspendState(true, true, true);
+                }
+                else
+              if (radioStandby.Checked == true)
+                {
+                    SetSuspendState(false, true, true);
+                }
+                else
+                    if (radioJustAlarm2.Checked == true)
+                {
+                    btnStopAlarm2.Visible = true;
+                    radioJustAlarm2.Visible = true;
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"data\alarm.wav");
+                    player.Play();
+                }
+            }
+            catch
+            {
+
+            }
+            timerBattery.Enabled = false;
+        }
+
         void IslemYap()
         {
             btnStart.Enabled = true;
@@ -182,8 +222,7 @@ namespace Snore
         private void frmMain_Load(object sender, EventArgs e)
         {
             MyIcon.Icon = new Icon(@"data\images\sleep.ico");
-            PowerStatus status = SystemInformation.PowerStatus;
-            lblBatteryLevel.Text = status.BatteryLifePercent.ToString("P0");
+            metroTabControl1.SelectedIndex = 0;
         }
 
         private void frmMain_Resize(object sender, EventArgs e)
@@ -211,18 +250,55 @@ namespace Snore
 
         private void lblBatteryLevel_Click(object sender, EventArgs e)
         {
-            tabControl1.SelectedIndex = 0;
+           // tabControl1.SelectedIndex = 0;
         }
 
         private void darkButton1_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
+            timerBattery.Enabled = true;
+            
         }
 
         private void darkButton2_Click(object sender, EventArgs e)
         {
-            timer1.Enabled = false;
+            timerBattery.Enabled = false;
 
+        }
+
+        private void timerBattery_Tick(object sender, EventArgs e)
+        {
+            timerBattery.Interval = 500;
+
+             if(darkNumericUpDown1.DecimalPlaces < Int32.Parse(lblBatteryLevel.Text))
+            {
+                BataryaIslemYap();
+            }
+            else
+            {
+                MessageBox.Show("Hata");
+            }
+                   
+        }
+
+        private void btnStopAlarm2_Click(object sender, EventArgs e)
+        {
+            player.Stop();
+            timerBattery.Enabled = false;
+            btnStopAlarm2.Visible = false;
+        }
+
+        private void CheckBattery_Tick(object sender, EventArgs e)
+        {
+            PowerStatus status = SystemInformation.PowerStatus;
+            textBox1.Text = status.BatteryLifePercent.ToString("P0");
+
+            string yazi = textBox1.Text;
+
+            string KalanYazi = yazi.Remove(0, 1);
+
+            textBox1.Text = KalanYazi.ToString();
+
+            lblBatteryLevel.Text = textBox1.Text;
         }
     }
 }
