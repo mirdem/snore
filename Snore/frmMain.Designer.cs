@@ -255,6 +255,7 @@
             this.btnCloseApp.Size = new System.Drawing.Size(75, 23);
             this.btnCloseApp.TabIndex = 9;
             this.btnCloseApp.Text = "Exit";
+            this.btnCloseApp.Click += new System.EventHandler(this.btnCloseApp_Click);
             // 
             // darkSectionPanel1
             // 
@@ -354,6 +355,7 @@
             this.btnStopAlarm.Size = new System.Drawing.Size(30, 29);
             this.btnStopAlarm.TabIndex = 15;
             this.btnStopAlarm.UseVisualStyleBackColor = true;
+            this.btnStopAlarm.Visible = false;
             this.btnStopAlarm.Click += new System.EventHandler(this.btnStopAlarm_Click);
             // 
             // frmMain

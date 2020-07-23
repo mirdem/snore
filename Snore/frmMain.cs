@@ -197,5 +197,10 @@ namespace Snore
             player.Stop();
             btnStopAlarm.Visible = false;
         }
+
+        private void btnCloseApp_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
