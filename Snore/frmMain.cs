@@ -47,7 +47,10 @@ namespace Snore
             MyIcon.Visible = false;
         }
         void IslemYap()
-        {     try
+        {
+            btnStart.Enabled = true;
+
+            try
             { 
                 if (radioShutdown.Checked == true)
                 {
@@ -142,13 +145,15 @@ namespace Snore
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            timerBattery.Enabled = false;
             try
-            { 
-            if(radioShutdown.Checked==false && radioRestart.Checked==false && radioLogOff.Checked==false && radioLock.Checked==false && radioAlarm.Checked==false)
             {
-                MessageBox.Show("Please Select the action!", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
+                if (radioShutdown.Checked == false && radioRestart.Checked == false && radioLogOff.Checked == false && radioLock.Checked == false && radioAlarm.Checked == false)
+                {
+                    MessageBox.Show("Please Select the action!", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    btnStart.Enabled = false;
             timer1.Start();
             dakika = Convert.ToInt32(txtTime.Text);
             }
@@ -160,6 +165,7 @@ namespace Snore
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            btnStart.Enabled = true;
             timer1.Stop();
             lblCountdownMin.Text = "00";
             lblCountdownSecond.Text = "00";
@@ -176,7 +182,8 @@ namespace Snore
         private void frmMain_Load(object sender, EventArgs e)
         {
             MyIcon.Icon = new Icon(@"data\images\sleep.ico");
-
+            PowerStatus status = SystemInformation.PowerStatus;
+            lblBatteryLevel.Text = status.BatteryLifePercent.ToString("P0");
         }
 
         private void frmMain_Resize(object sender, EventArgs e)
@@ -188,7 +195,6 @@ namespace Snore
         private void btnAbout_Click(object sender, EventArgs e)
         {
             frmAbout frmAbout = new frmAbout();
-            this.Hide();
             frmAbout.Show();
         }
 
@@ -201,6 +207,22 @@ namespace Snore
         private void btnCloseApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void lblBatteryLevel_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectedIndex = 0;
+        }
+
+        private void darkButton1_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+        }
+
+        private void darkButton2_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+
         }
     }
 }

@@ -44,5 +44,11 @@ namespace Snore
         {
             Close();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            frmRemote frmRemote = new frmRemote();
+            frmRemote.Show();
+        }
     }
 }
