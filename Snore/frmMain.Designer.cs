@@ -58,40 +58,41 @@
             this.btnSysTray = new DarkUI.Controls.DarkButton();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.darkSectionPanel3 = new DarkUI.Controls.DarkSectionPanel();
-            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
-            this.radioShutdown2 = new DarkUI.Controls.DarkRadioButton();
             this.radioHibernate = new DarkUI.Controls.DarkRadioButton();
+            this.radioShutdown2 = new DarkUI.Controls.DarkRadioButton();
             this.radioStandby = new DarkUI.Controls.DarkRadioButton();
             this.radioJustAlarm2 = new DarkUI.Controls.DarkRadioButton();
+            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
             this.darkLabel8 = new DarkUI.Controls.DarkLabel();
             this.darkButton1 = new DarkUI.Controls.DarkButton();
             this.darkButton2 = new DarkUI.Controls.DarkButton();
             this.darkSectionPanel4 = new DarkUI.Controls.DarkSectionPanel();
+            this.btnStopAlarm2 = new System.Windows.Forms.Button();
+            this.darkLabel10 = new DarkUI.Controls.DarkLabel();
             this.darkNumericUpDown1 = new DarkUI.Controls.DarkNumericUpDown();
             this.darkLabel9 = new DarkUI.Controls.DarkLabel();
             this.lblBatteryLevel = new DarkUI.Controls.DarkLabel();
-            this.darkLabel10 = new DarkUI.Controls.DarkLabel();
             this.timerBattery = new System.Windows.Forms.Timer(this.components);
-            this.btnStopAlarm2 = new System.Windows.Forms.Button();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.CheckBattery = new System.Windows.Forms.Timer(this.components);
-            this.darkLabel11 = new DarkUI.Controls.DarkLabel();
+            this.tabMain = new MetroFramework.Controls.MetroTabPage();
+            this.tabBattery = new MetroFramework.Controls.MetroTabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.darkLabel11 = new DarkUI.Controls.DarkLabel();
+            this.tabSchedule = new System.Windows.Forms.TabPage();
+            this.tabSettings = new MetroFramework.Controls.MetroTabPage();
+            this.txtWinStarts = new System.Windows.Forms.TextBox();
+            this.btnSave = new DarkUI.Controls.DarkButton();
+            this.chkWinStarts = new DarkUI.Controls.DarkCheckBox();
+            this.tabAbout = new MetroFramework.Controls.MetroTabPage();
+            this.lblVersion = new DarkUI.Controls.DarkLabel();
             this.btnLinkedIn = new DarkUI.Controls.DarkButton();
             this.btnVisit = new DarkUI.Controls.DarkButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.darkLabel12 = new DarkUI.Controls.DarkLabel();
             this.darkLabel13 = new DarkUI.Controls.DarkLabel();
-            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.chkWinStarts = new DarkUI.Controls.DarkCheckBox();
-            this.btnSave = new DarkUI.Controls.DarkButton();
-            this.txtWinStarts = new System.Windows.Forms.TextBox();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lblVersion = new DarkUI.Controls.DarkLabel();
+            this.CheckBattery = new System.Windows.Forms.Timer(this.components);
+            this.btnRemote = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.darkSectionPanel2.SuspendLayout();
@@ -100,12 +101,12 @@
             this.darkSectionPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDown1)).BeginInit();
             this.metroTabControl1.SuspendLayout();
-            this.metroTabPage1.SuspendLayout();
-            this.metroTabPage2.SuspendLayout();
-            this.metroTabPage3.SuspendLayout();
+            this.tabMain.SuspendLayout();
+            this.tabBattery.SuspendLayout();
+            this.tabSettings.SuspendLayout();
+            this.tabAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.metroTabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -408,15 +409,15 @@
             this.darkSectionPanel3.Size = new System.Drawing.Size(331, 107);
             this.darkSectionPanel3.TabIndex = 0;
             // 
-            // darkLabel4
+            // radioHibernate
             // 
-            this.darkLabel4.AutoSize = true;
-            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel4.Location = new System.Drawing.Point(5, 1);
-            this.darkLabel4.Name = "darkLabel4";
-            this.darkLabel4.Size = new System.Drawing.Size(79, 13);
-            this.darkLabel4.TabIndex = 0;
-            this.darkLabel4.Text = "Choose action:";
+            this.radioHibernate.AutoSize = true;
+            this.radioHibernate.Location = new System.Drawing.Point(87, 46);
+            this.radioHibernate.Name = "radioHibernate";
+            this.radioHibernate.Size = new System.Drawing.Size(72, 17);
+            this.radioHibernate.TabIndex = 2;
+            this.radioHibernate.TabStop = true;
+            this.radioHibernate.Text = "Hibernate";
             // 
             // radioShutdown2
             // 
@@ -427,16 +428,6 @@
             this.radioShutdown2.TabIndex = 1;
             this.radioShutdown2.TabStop = true;
             this.radioShutdown2.Text = "Shutdown";
-            // 
-            // radioHibernate
-            // 
-            this.radioHibernate.AutoSize = true;
-            this.radioHibernate.Location = new System.Drawing.Point(87, 46);
-            this.radioHibernate.Name = "radioHibernate";
-            this.radioHibernate.Size = new System.Drawing.Size(72, 17);
-            this.radioHibernate.TabIndex = 2;
-            this.radioHibernate.TabStop = true;
-            this.radioHibernate.Text = "Hibernate";
             // 
             // radioStandby
             // 
@@ -455,6 +446,16 @@
             this.radioJustAlarm2.Size = new System.Drawing.Size(75, 17);
             this.radioJustAlarm2.TabIndex = 5;
             this.radioJustAlarm2.Text = "Just Alarm";
+            // 
+            // darkLabel4
+            // 
+            this.darkLabel4.AutoSize = true;
+            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel4.Location = new System.Drawing.Point(5, 1);
+            this.darkLabel4.Name = "darkLabel4";
+            this.darkLabel4.Size = new System.Drawing.Size(79, 13);
+            this.darkLabel4.TabIndex = 0;
+            this.darkLabel4.Text = "Choose action:";
             // 
             // darkLabel8
             // 
@@ -500,6 +501,29 @@
             this.darkSectionPanel4.Size = new System.Drawing.Size(331, 107);
             this.darkSectionPanel4.TabIndex = 5;
             // 
+            // btnStopAlarm2
+            // 
+            this.btnStopAlarm2.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnStopAlarm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStopAlarm2.Image = ((System.Drawing.Image)(resources.GetObject("btnStopAlarm2.Image")));
+            this.btnStopAlarm2.Location = new System.Drawing.Point(216, 52);
+            this.btnStopAlarm2.Name = "btnStopAlarm2";
+            this.btnStopAlarm2.Size = new System.Drawing.Size(30, 30);
+            this.btnStopAlarm2.TabIndex = 7;
+            this.btnStopAlarm2.UseVisualStyleBackColor = true;
+            this.btnStopAlarm2.Visible = false;
+            this.btnStopAlarm2.Click += new System.EventHandler(this.btnStopAlarm2_Click);
+            // 
+            // darkLabel10
+            // 
+            this.darkLabel10.AutoSize = true;
+            this.darkLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel10.Location = new System.Drawing.Point(8, 6);
+            this.darkLabel10.Name = "darkLabel10";
+            this.darkLabel10.Size = new System.Drawing.Size(94, 13);
+            this.darkLabel10.TabIndex = 6;
+            this.darkLabel10.Text = "Set Battery Level:";
+            // 
             // darkNumericUpDown1
             // 
             this.darkNumericUpDown1.Location = new System.Drawing.Point(86, 52);
@@ -542,102 +566,82 @@
             this.lblBatteryLevel.Text = "100";
             this.lblBatteryLevel.Click += new System.EventHandler(this.lblBatteryLevel_Click);
             // 
-            // darkLabel10
-            // 
-            this.darkLabel10.AutoSize = true;
-            this.darkLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel10.Location = new System.Drawing.Point(8, 6);
-            this.darkLabel10.Name = "darkLabel10";
-            this.darkLabel10.Size = new System.Drawing.Size(94, 13);
-            this.darkLabel10.TabIndex = 6;
-            this.darkLabel10.Text = "Set Battery Level:";
-            // 
             // timerBattery
             // 
             this.timerBattery.Interval = 1000;
             this.timerBattery.Tick += new System.EventHandler(this.timerBattery_Tick);
             // 
-            // btnStopAlarm2
-            // 
-            this.btnStopAlarm2.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnStopAlarm2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStopAlarm2.Image = ((System.Drawing.Image)(resources.GetObject("btnStopAlarm2.Image")));
-            this.btnStopAlarm2.Location = new System.Drawing.Point(216, 52);
-            this.btnStopAlarm2.Name = "btnStopAlarm2";
-            this.btnStopAlarm2.Size = new System.Drawing.Size(30, 30);
-            this.btnStopAlarm2.TabIndex = 7;
-            this.btnStopAlarm2.UseVisualStyleBackColor = true;
-            this.btnStopAlarm2.Visible = false;
-            this.btnStopAlarm2.Click += new System.EventHandler(this.btnStopAlarm2_Click);
-            // 
             // metroTabControl1
             // 
-            this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage2);
-            this.metroTabControl1.Controls.Add(this.tabPage1);
-            this.metroTabControl1.Controls.Add(this.metroTabPage4);
-            this.metroTabControl1.Controls.Add(this.metroTabPage3);
+            this.metroTabControl1.Controls.Add(this.tabMain);
+            this.metroTabControl1.Controls.Add(this.tabBattery);
+            this.metroTabControl1.Controls.Add(this.tabSchedule);
+            this.metroTabControl1.Controls.Add(this.tabSettings);
+            this.metroTabControl1.Controls.Add(this.tabAbout);
             this.metroTabControl1.Location = new System.Drawing.Point(6, 27);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 4;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(355, 401);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.White;
             this.metroTabControl1.TabIndex = 15;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabControl1.UseSelectable = true;
             // 
-            // metroTabPage1
+            // tabMain
             // 
-            this.metroTabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.metroTabPage1.Controls.Add(this.darkSectionPanel1);
-            this.metroTabPage1.Controls.Add(this.darkLabel5);
-            this.metroTabPage1.Controls.Add(this.darkSectionPanel2);
-            this.metroTabPage1.Controls.Add(this.darkLabel7);
-            this.metroTabPage1.Controls.Add(this.lblCountdownSecond);
-            this.metroTabPage1.Controls.Add(this.btnSysTray);
-            this.metroTabPage1.Controls.Add(this.lblCountdownMin);
-            this.metroTabPage1.Controls.Add(this.btnCloseApp);
-            this.metroTabPage1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(347, 359);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "Main";
-            this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
+            this.tabMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.tabMain.Controls.Add(this.btnRemote);
+            this.tabMain.Controls.Add(this.darkSectionPanel1);
+            this.tabMain.Controls.Add(this.darkLabel5);
+            this.tabMain.Controls.Add(this.darkSectionPanel2);
+            this.tabMain.Controls.Add(this.darkLabel7);
+            this.tabMain.Controls.Add(this.lblCountdownSecond);
+            this.tabMain.Controls.Add(this.btnSysTray);
+            this.tabMain.Controls.Add(this.lblCountdownMin);
+            this.tabMain.Controls.Add(this.btnCloseApp);
+            this.tabMain.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabMain.HorizontalScrollbarBarColor = true;
+            this.tabMain.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabMain.HorizontalScrollbarSize = 10;
+            this.tabMain.Location = new System.Drawing.Point(4, 38);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.Size = new System.Drawing.Size(347, 359);
+            this.tabMain.TabIndex = 0;
+            this.tabMain.Text = "Main";
+            this.tabMain.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabMain.VerticalScrollbarBarColor = true;
+            this.tabMain.VerticalScrollbarHighlightOnWheel = false;
+            this.tabMain.VerticalScrollbarSize = 10;
             // 
-            // metroTabPage2
+            // tabBattery
             // 
-            this.metroTabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.metroTabPage2.Controls.Add(this.textBox1);
-            this.metroTabPage2.Controls.Add(this.darkLabel11);
-            this.metroTabPage2.Controls.Add(this.lblBatteryLevel);
-            this.metroTabPage2.Controls.Add(this.darkLabel9);
-            this.metroTabPage2.Controls.Add(this.darkSectionPanel4);
-            this.metroTabPage2.Controls.Add(this.darkSectionPanel3);
-            this.metroTabPage2.HorizontalScrollbarBarColor = true;
-            this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
-            this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(347, 359);
-            this.metroTabPage2.TabIndex = 1;
-            this.metroTabPage2.Text = "Battery Triggered";
-            this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabPage2.VerticalScrollbarBarColor = true;
-            this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
+            this.tabBattery.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.tabBattery.Controls.Add(this.textBox1);
+            this.tabBattery.Controls.Add(this.darkLabel11);
+            this.tabBattery.Controls.Add(this.lblBatteryLevel);
+            this.tabBattery.Controls.Add(this.darkLabel9);
+            this.tabBattery.Controls.Add(this.darkSectionPanel4);
+            this.tabBattery.Controls.Add(this.darkSectionPanel3);
+            this.tabBattery.HorizontalScrollbarBarColor = true;
+            this.tabBattery.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabBattery.HorizontalScrollbarSize = 10;
+            this.tabBattery.Location = new System.Drawing.Point(4, 38);
+            this.tabBattery.Name = "tabBattery";
+            this.tabBattery.Size = new System.Drawing.Size(347, 359);
+            this.tabBattery.TabIndex = 1;
+            this.tabBattery.Text = "Battery Triggered";
+            this.tabBattery.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabBattery.VerticalScrollbarBarColor = true;
+            this.tabBattery.VerticalScrollbarHighlightOnWheel = false;
+            this.tabBattery.VerticalScrollbarSize = 10;
             // 
-            // CheckBattery
+            // textBox1
             // 
-            this.CheckBattery.Enabled = true;
-            this.CheckBattery.Interval = 500;
-            this.CheckBattery.Tick += new System.EventHandler(this.CheckBattery_Tick);
+            this.textBox1.Location = new System.Drawing.Point(233, 295);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Visible = false;
             // 
             // darkLabel11
             // 
@@ -651,35 +655,92 @@
             this.darkLabel11.TabIndex = 8;
             this.darkLabel11.Text = "%";
             // 
-            // textBox1
+            // tabSchedule
             // 
-            this.textBox1.Location = new System.Drawing.Point(233, 295);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Visible = false;
+            this.tabSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.tabSchedule.Location = new System.Drawing.Point(4, 38);
+            this.tabSchedule.Name = "tabSchedule";
+            this.tabSchedule.Size = new System.Drawing.Size(347, 359);
+            this.tabSchedule.TabIndex = 4;
+            this.tabSchedule.Text = "Schedule";
             // 
-            // metroTabPage3
+            // tabSettings
             // 
-            this.metroTabPage3.Controls.Add(this.lblVersion);
-            this.metroTabPage3.Controls.Add(this.btnLinkedIn);
-            this.metroTabPage3.Controls.Add(this.btnVisit);
-            this.metroTabPage3.Controls.Add(this.pictureBox2);
-            this.metroTabPage3.Controls.Add(this.pictureBox3);
-            this.metroTabPage3.Controls.Add(this.darkLabel12);
-            this.metroTabPage3.Controls.Add(this.darkLabel13);
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(347, 359);
-            this.metroTabPage3.TabIndex = 2;
-            this.metroTabPage3.Text = "About";
-            this.metroTabPage3.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
+            this.tabSettings.Controls.Add(this.txtWinStarts);
+            this.tabSettings.Controls.Add(this.btnSave);
+            this.tabSettings.Controls.Add(this.chkWinStarts);
+            this.tabSettings.HorizontalScrollbarBarColor = true;
+            this.tabSettings.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabSettings.HorizontalScrollbarSize = 10;
+            this.tabSettings.Location = new System.Drawing.Point(4, 38);
+            this.tabSettings.Name = "tabSettings";
+            this.tabSettings.Size = new System.Drawing.Size(347, 359);
+            this.tabSettings.TabIndex = 3;
+            this.tabSettings.Text = "Settings";
+            this.tabSettings.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabSettings.VerticalScrollbarBarColor = true;
+            this.tabSettings.VerticalScrollbarHighlightOnWheel = false;
+            this.tabSettings.VerticalScrollbarSize = 10;
+            // 
+            // txtWinStarts
+            // 
+            this.txtWinStarts.Location = new System.Drawing.Point(360, 188);
+            this.txtWinStarts.Name = "txtWinStarts";
+            this.txtWinStarts.Size = new System.Drawing.Size(100, 21);
+            this.txtWinStarts.TabIndex = 4;
+            this.txtWinStarts.Visible = false;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(240, 299);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Padding = new System.Windows.Forms.Padding(5);
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.Text = "Save";
+            // 
+            // chkWinStarts
+            // 
+            this.chkWinStarts.AutoSize = true;
+            this.chkWinStarts.Location = new System.Drawing.Point(3, 26);
+            this.chkWinStarts.Name = "chkWinStarts";
+            this.chkWinStarts.Size = new System.Drawing.Size(181, 17);
+            this.chkWinStarts.TabIndex = 2;
+            this.chkWinStarts.Text = "Start when the computer starts.";
+            this.chkWinStarts.CheckedChanged += new System.EventHandler(this.chkWinStarts_CheckedChanged);
+            // 
+            // tabAbout
+            // 
+            this.tabAbout.Controls.Add(this.lblVersion);
+            this.tabAbout.Controls.Add(this.btnLinkedIn);
+            this.tabAbout.Controls.Add(this.btnVisit);
+            this.tabAbout.Controls.Add(this.pictureBox2);
+            this.tabAbout.Controls.Add(this.pictureBox3);
+            this.tabAbout.Controls.Add(this.darkLabel12);
+            this.tabAbout.Controls.Add(this.darkLabel13);
+            this.tabAbout.HorizontalScrollbarBarColor = true;
+            this.tabAbout.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabAbout.HorizontalScrollbarSize = 10;
+            this.tabAbout.Location = new System.Drawing.Point(4, 38);
+            this.tabAbout.Name = "tabAbout";
+            this.tabAbout.Size = new System.Drawing.Size(347, 359);
+            this.tabAbout.TabIndex = 2;
+            this.tabAbout.Text = "About";
+            this.tabAbout.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabAbout.VerticalScrollbarBarColor = true;
+            this.tabAbout.VerticalScrollbarHighlightOnWheel = false;
+            this.tabAbout.VerticalScrollbarSize = 10;
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.lblVersion.Location = new System.Drawing.Point(134, 203);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(13, 13);
+            this.lblVersion.TabIndex = 13;
+            this.lblVersion.Text = "V";
             // 
             // btnLinkedIn
             // 
@@ -746,70 +807,27 @@
             this.darkLabel13.TabIndex = 7;
             this.darkLabel13.Text = "Snore from xfDev";
             // 
-            // metroTabPage4
+            // CheckBattery
             // 
-            this.metroTabPage4.Controls.Add(this.txtWinStarts);
-            this.metroTabPage4.Controls.Add(this.btnSave);
-            this.metroTabPage4.Controls.Add(this.chkWinStarts);
-            this.metroTabPage4.HorizontalScrollbarBarColor = true;
-            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.HorizontalScrollbarSize = 10;
-            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(347, 359);
-            this.metroTabPage4.TabIndex = 3;
-            this.metroTabPage4.Text = "Settings";
-            this.metroTabPage4.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabPage4.VerticalScrollbarBarColor = true;
-            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.VerticalScrollbarSize = 10;
+            this.CheckBattery.Enabled = true;
+            this.CheckBattery.Interval = 500;
+            this.CheckBattery.Tick += new System.EventHandler(this.CheckBattery_Tick);
             // 
-            // chkWinStarts
+            // btnRemote
             // 
-            this.chkWinStarts.AutoSize = true;
-            this.chkWinStarts.Location = new System.Drawing.Point(3, 26);
-            this.chkWinStarts.Name = "chkWinStarts";
-            this.chkWinStarts.Size = new System.Drawing.Size(181, 17);
-            this.chkWinStarts.TabIndex = 2;
-            this.chkWinStarts.Text = "Start when the computer starts.";
-            this.chkWinStarts.CheckedChanged += new System.EventHandler(this.chkWinStarts_CheckedChanged);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(240, 299);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Padding = new System.Windows.Forms.Padding(5);
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Save";
-            // 
-            // txtWinStarts
-            // 
-            this.txtWinStarts.Location = new System.Drawing.Point(360, 188);
-            this.txtWinStarts.Name = "txtWinStarts";
-            this.txtWinStarts.Size = new System.Drawing.Size(100, 21);
-            this.txtWinStarts.TabIndex = 4;
-            this.txtWinStarts.Visible = false;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.tabPage1.Location = new System.Drawing.Point(4, 38);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(347, 359);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "Schedule";
-            // 
-            // lblVersion
-            // 
-            this.lblVersion.AutoSize = true;
-            this.lblVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.lblVersion.Location = new System.Drawing.Point(134, 203);
-            this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(13, 13);
-            this.lblVersion.TabIndex = 13;
-            this.lblVersion.Text = "V";
+            this.btnRemote.BackColor = System.Drawing.Color.Transparent;
+            this.btnRemote.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.btnRemote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemote.Image = ((System.Drawing.Image)(resources.GetObject("btnRemote.Image")));
+            this.btnRemote.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRemote.Location = new System.Drawing.Point(3, 302);
+            this.btnRemote.Name = "btnRemote";
+            this.btnRemote.Size = new System.Drawing.Size(55, 52);
+            this.btnRemote.TabIndex = 13;
+            this.btnRemote.Text = "Remote";
+            this.btnRemote.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRemote.UseVisualStyleBackColor = false;
+            this.btnRemote.Click += new System.EventHandler(this.btnRemote_Click);
             // 
             // frmMain
             // 
@@ -840,16 +858,16 @@
             this.darkSectionPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDown1)).EndInit();
             this.metroTabControl1.ResumeLayout(false);
-            this.metroTabPage1.ResumeLayout(false);
-            this.metroTabPage1.PerformLayout();
-            this.metroTabPage2.ResumeLayout(false);
-            this.metroTabPage2.PerformLayout();
-            this.metroTabPage3.ResumeLayout(false);
-            this.metroTabPage3.PerformLayout();
+            this.tabMain.ResumeLayout(false);
+            this.tabMain.PerformLayout();
+            this.tabBattery.ResumeLayout(false);
+            this.tabBattery.PerformLayout();
+            this.tabSettings.ResumeLayout(false);
+            this.tabSettings.PerformLayout();
+            this.tabAbout.ResumeLayout(false);
+            this.tabAbout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.metroTabPage4.ResumeLayout(false);
-            this.metroTabPage4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -900,24 +918,25 @@
         private System.Windows.Forms.Timer timerBattery;
         private System.Windows.Forms.Button btnStopAlarm2;
         private MetroFramework.Controls.MetroTabControl metroTabControl1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage2;
+        private MetroFramework.Controls.MetroTabPage tabMain;
+        private MetroFramework.Controls.MetroTabPage tabBattery;
         private System.Windows.Forms.Timer CheckBattery;
         private DarkUI.Controls.DarkLabel darkLabel11;
         private System.Windows.Forms.TextBox textBox1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage3;
+        private MetroFramework.Controls.MetroTabPage tabAbout;
         private DarkUI.Controls.DarkButton btnLinkedIn;
         private DarkUI.Controls.DarkButton btnVisit;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private DarkUI.Controls.DarkLabel darkLabel12;
         private DarkUI.Controls.DarkLabel darkLabel13;
-        private MetroFramework.Controls.MetroTabPage metroTabPage4;
+        private MetroFramework.Controls.MetroTabPage tabSettings;
         private DarkUI.Controls.DarkCheckBox chkWinStarts;
         private DarkUI.Controls.DarkButton btnSave;
         private System.Windows.Forms.TextBox txtWinStarts;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabSchedule;
         private DarkUI.Controls.DarkLabel lblVersion;
+        private System.Windows.Forms.Button btnRemote;
     }
 }
 

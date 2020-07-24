@@ -242,7 +242,7 @@ namespace Snore
         private void frmMain_Load(object sender, EventArgs e)
         {
             checkStarts();
-            MyIcon.Icon = new Icon(@"data\images\sleep.ico");
+            MyIcon.Icon = new Icon(Application.StartupPath+@"\data\images\sleep.ico");
             metroTabControl1.SelectedIndex = 0;
             lblVersion.Text = "Version " + this.ProductVersion;
         }
@@ -345,6 +345,12 @@ namespace Snore
                 key.DeleteValue(ProgramAdi);
                 txtWinStarts.Text = "False";
             }
+        }
+
+        private void btnRemote_Click(object sender, EventArgs e)
+        {        
+            frmRemote frmRemote = new frmRemote();
+            frmRemote.Show();
         }
     }
 }

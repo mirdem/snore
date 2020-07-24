@@ -19,6 +19,16 @@ namespace Snore
         private bool dragging = false;
         private Point dragCursorPoint;
         private Point dragFormPoint;
+        int saniye = 60;
+        int dakika = 0;
+        void IslemYap()
+        {
+
+        }
+        void IslemYapNoTimer()
+        {
+
+        }
         private void frmRemote_Load(object sender, EventArgs e)
         {
           
@@ -43,6 +53,58 @@ namespace Snore
         private void panel1_MouseUp(object sender, MouseEventArgs e)
         {
             dragging = false;
+        }
+
+        private void btnSet_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (radioShutdown.Checked == false && radioRestart.Checked == false && radioLogOff.Checked == false && radioLock.Checked == false)
+                {
+                    MessageBox.Show("Please Select the action!", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    btnSet.Enabled = false;
+                timer1.Start();
+                dakika = Convert.ToInt32(txtTime.Text);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Interval = 1000;
+
+            saniye = saniye - 1;
+            lblCountdownSecond.Text = Convert.ToString(saniye);
+            lblCountdownMin.Text = Convert.ToString(dakika - 1);
+            if (saniye == 0)
+            {
+
+                dakika = dakika - 1;
+                lblCountdownMin.Text = Convert.ToString(dakika);
+                saniye = 60;
+            }
+
+            if (lblCountdownMin.Text == "-1")
+            {
+                timer1.Stop();
+                lblCountdownMin.Text = "00";
+                lblCountdownSecond.Text = "00";
+                if (lblCountdownMin.Text == "00" && lblCountdownSecond.Text == "00")
+                {
+                    IslemYap();
+                }
+            }
+        }
+
+        private void darkButton1_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+            this.Hide();
         }
     }
 }
