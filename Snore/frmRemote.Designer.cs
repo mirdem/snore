@@ -34,34 +34,40 @@
             this.darkLabel1 = new DarkUI.Controls.DarkLabel();
             this.darkButton1 = new DarkUI.Controls.DarkButton();
             this.darkSectionPanel1 = new DarkUI.Controls.DarkSectionPanel();
-            this.darkSectionPanel2 = new DarkUI.Controls.DarkSectionPanel();
-            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
-            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
             this.radioShutdown = new DarkUI.Controls.DarkRadioButton();
             this.radioRestart = new DarkUI.Controls.DarkRadioButton();
             this.radioLogOff = new DarkUI.Controls.DarkRadioButton();
             this.radioLock = new DarkUI.Controls.DarkRadioButton();
-            this.txtTime = new DarkUI.Controls.DarkTextBox();
-            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
-            this.btnCancel = new DarkUI.Controls.DarkButton();
+            this.darkLabel2 = new DarkUI.Controls.DarkLabel();
+            this.darkSectionPanel2 = new DarkUI.Controls.DarkSectionPanel();
             this.btnSet = new DarkUI.Controls.DarkButton();
+            this.btnCancel = new DarkUI.Controls.DarkButton();
+            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
+            this.txtTime = new DarkUI.Controls.DarkTextBox();
+            this.darkLabel3 = new DarkUI.Controls.DarkLabel();
             this.lblCountdownMin = new DarkUI.Controls.DarkLabel();
             this.darkLabel6 = new DarkUI.Controls.DarkLabel();
             this.lblCountdownSecond = new DarkUI.Controls.DarkLabel();
             this.darkLabel8 = new DarkUI.Controls.DarkLabel();
             this.darkSectionPanel3 = new DarkUI.Controls.DarkSectionPanel();
-            this.darkLabel9 = new DarkUI.Controls.DarkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnApply = new DarkUI.Controls.DarkButton();
+            this.darkLabel5 = new DarkUI.Controls.DarkLabel();
             this.txtRemoteIP = new DarkUI.Controls.DarkTextBox();
+            this.darkLabel9 = new DarkUI.Controls.DarkLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.darkSectionPanel1.SuspendLayout();
             this.darkSectionPanel2.SuspendLayout();
             this.darkSectionPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(84)))), ((int)(((byte)(86)))));
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.darkLabel1);
             this.panel1.Controls.Add(this.darkButton1);
             this.panel1.Location = new System.Drawing.Point(0, -1);
@@ -76,7 +82,7 @@
             // 
             this.darkLabel1.AutoSize = true;
             this.darkLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel1.Location = new System.Drawing.Point(4, 6);
+            this.darkLabel1.Location = new System.Drawing.Point(29, 6);
             this.darkLabel1.Name = "darkLabel1";
             this.darkLabel1.Size = new System.Drawing.Size(44, 13);
             this.darkLabel1.TabIndex = 2;
@@ -105,41 +111,6 @@
             this.darkSectionPanel1.Size = new System.Drawing.Size(336, 107);
             this.darkSectionPanel1.TabIndex = 1;
             // 
-            // darkSectionPanel2
-            // 
-            this.darkSectionPanel2.Controls.Add(this.btnSet);
-            this.darkSectionPanel2.Controls.Add(this.btnCancel);
-            this.darkSectionPanel2.Controls.Add(this.darkLabel4);
-            this.darkSectionPanel2.Controls.Add(this.txtTime);
-            this.darkSectionPanel2.Controls.Add(this.darkLabel3);
-            this.darkSectionPanel2.Location = new System.Drawing.Point(13, 219);
-            this.darkSectionPanel2.Name = "darkSectionPanel2";
-            this.darkSectionPanel2.SectionHeader = null;
-            this.darkSectionPanel2.Size = new System.Drawing.Size(336, 115);
-            this.darkSectionPanel2.TabIndex = 2;
-            // 
-            // darkLabel2
-            // 
-            this.darkLabel2.AutoSize = true;
-            this.darkLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel2.Location = new System.Drawing.Point(4, 6);
-            this.darkLabel2.Name = "darkLabel2";
-            this.darkLabel2.Size = new System.Drawing.Size(79, 13);
-            this.darkLabel2.TabIndex = 0;
-            this.darkLabel2.Text = "Choose action:";
-            // 
-            // darkLabel3
-            // 
-            this.darkLabel3.AutoSize = true;
-            this.darkLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Location = new System.Drawing.Point(2, 5);
-            this.darkLabel3.Name = "darkLabel3";
-            this.darkLabel3.Size = new System.Drawing.Size(50, 13);
-            this.darkLabel3.TabIndex = 0;
-            this.darkLabel3.Text = "Set time:";
-            // 
             // radioShutdown
             // 
             this.radioShutdown.AutoSize = true;
@@ -163,6 +134,7 @@
             // radioLogOff
             // 
             this.radioLogOff.AutoSize = true;
+            this.radioLogOff.Enabled = false;
             this.radioLogOff.Location = new System.Drawing.Point(166, 53);
             this.radioLogOff.Name = "radioLogOff";
             this.radioLogOff.Size = new System.Drawing.Size(61, 17);
@@ -173,6 +145,7 @@
             // radioLock
             // 
             this.radioLock.AutoSize = true;
+            this.radioLock.Enabled = false;
             this.radioLock.Location = new System.Drawing.Point(244, 53);
             this.radioLock.Name = "radioLock";
             this.radioLock.Size = new System.Drawing.Size(46, 17);
@@ -180,16 +153,49 @@
             this.radioLock.TabStop = true;
             this.radioLock.Text = "Lock";
             // 
-            // txtTime
+            // darkLabel2
             // 
-            this.txtTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.txtTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txtTime.Location = new System.Drawing.Point(95, 59);
-            this.txtTime.MaxLength = 4;
-            this.txtTime.Name = "txtTime";
-            this.txtTime.Size = new System.Drawing.Size(100, 21);
-            this.txtTime.TabIndex = 1;
+            this.darkLabel2.AutoSize = true;
+            this.darkLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.darkLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel2.Location = new System.Drawing.Point(4, 6);
+            this.darkLabel2.Name = "darkLabel2";
+            this.darkLabel2.Size = new System.Drawing.Size(79, 13);
+            this.darkLabel2.TabIndex = 0;
+            this.darkLabel2.Text = "Choose action:";
+            // 
+            // darkSectionPanel2
+            // 
+            this.darkSectionPanel2.Controls.Add(this.btnSet);
+            this.darkSectionPanel2.Controls.Add(this.btnCancel);
+            this.darkSectionPanel2.Controls.Add(this.darkLabel4);
+            this.darkSectionPanel2.Controls.Add(this.txtTime);
+            this.darkSectionPanel2.Controls.Add(this.darkLabel3);
+            this.darkSectionPanel2.Location = new System.Drawing.Point(13, 219);
+            this.darkSectionPanel2.Name = "darkSectionPanel2";
+            this.darkSectionPanel2.SectionHeader = null;
+            this.darkSectionPanel2.Size = new System.Drawing.Size(336, 115);
+            this.darkSectionPanel2.TabIndex = 2;
+            // 
+            // btnSet
+            // 
+            this.btnSet.Location = new System.Drawing.Point(257, 38);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Padding = new System.Windows.Forms.Padding(5);
+            this.btnSet.Size = new System.Drawing.Size(75, 23);
+            this.btnSet.TabIndex = 4;
+            this.btnSet.Text = "Set";
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(257, 67);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Padding = new System.Windows.Forms.Padding(5);
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // darkLabel4
             // 
@@ -202,24 +208,27 @@
             this.darkLabel4.TabIndex = 2;
             this.darkLabel4.Text = "Set time(Minute):";
             // 
-            // btnCancel
+            // txtTime
             // 
-            this.btnCancel.Location = new System.Drawing.Point(257, 67);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Padding = new System.Windows.Forms.Padding(5);
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 3;
-            this.btnCancel.Text = "Cancel";
+            this.txtTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.txtTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txtTime.Location = new System.Drawing.Point(95, 59);
+            this.txtTime.MaxLength = 4;
+            this.txtTime.Name = "txtTime";
+            this.txtTime.Size = new System.Drawing.Size(100, 21);
+            this.txtTime.TabIndex = 1;
             // 
-            // btnSet
+            // darkLabel3
             // 
-            this.btnSet.Location = new System.Drawing.Point(257, 38);
-            this.btnSet.Name = "btnSet";
-            this.btnSet.Padding = new System.Windows.Forms.Padding(5);
-            this.btnSet.Size = new System.Drawing.Size(75, 23);
-            this.btnSet.TabIndex = 4;
-            this.btnSet.Text = "Set";
-            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
+            this.darkLabel3.AutoSize = true;
+            this.darkLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel3.Location = new System.Drawing.Point(2, 5);
+            this.darkLabel3.Name = "darkLabel3";
+            this.darkLabel3.Size = new System.Drawing.Size(50, 13);
+            this.darkLabel3.TabIndex = 0;
+            this.darkLabel3.Text = "Set time:";
             // 
             // lblCountdownMin
             // 
@@ -267,6 +276,9 @@
             // 
             // darkSectionPanel3
             // 
+            this.darkSectionPanel3.Controls.Add(this.linkLabel1);
+            this.darkSectionPanel3.Controls.Add(this.btnApply);
+            this.darkSectionPanel3.Controls.Add(this.darkLabel5);
             this.darkSectionPanel3.Controls.Add(this.txtRemoteIP);
             this.darkSectionPanel3.Controls.Add(this.darkLabel9);
             this.darkSectionPanel3.Location = new System.Drawing.Point(13, 159);
@@ -274,6 +286,51 @@
             this.darkSectionPanel3.SectionHeader = null;
             this.darkSectionPanel3.Size = new System.Drawing.Size(336, 54);
             this.darkSectionPanel3.TabIndex = 9;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.linkLabel1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.linkLabel1.Location = new System.Drawing.Point(243, 32);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(14, 14);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // btnApply
+            // 
+            this.btnApply.Location = new System.Drawing.Point(261, 29);
+            this.btnApply.Name = "btnApply";
+            this.btnApply.Padding = new System.Windows.Forms.Padding(5);
+            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.TabIndex = 3;
+            this.btnApply.Text = "Apply now";
+            this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // darkLabel5
+            // 
+            this.darkLabel5.AutoSize = true;
+            this.darkLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.darkLabel5.Location = new System.Drawing.Point(4, 5);
+            this.darkLabel5.Name = "darkLabel5";
+            this.darkLabel5.Size = new System.Drawing.Size(98, 13);
+            this.darkLabel5.TabIndex = 2;
+            this.darkLabel5.Text = "Remote IP Setting:";
+            // 
+            // txtRemoteIP
+            // 
+            this.txtRemoteIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
+            this.txtRemoteIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRemoteIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
+            this.txtRemoteIP.Location = new System.Drawing.Point(113, 29);
+            this.txtRemoteIP.Name = "txtRemoteIP";
+            this.txtRemoteIP.Size = new System.Drawing.Size(128, 21);
+            this.txtRemoteIP.TabIndex = 1;
             // 
             // darkLabel9
             // 
@@ -286,19 +343,18 @@
             this.darkLabel9.TabIndex = 0;
             this.darkLabel9.Text = "Remote IP Address:";
             // 
-            // txtRemoteIP
-            // 
-            this.txtRemoteIP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
-            this.txtRemoteIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtRemoteIP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txtRemoteIP.Location = new System.Drawing.Point(113, 29);
-            this.txtRemoteIP.Name = "txtRemoteIP";
-            this.txtRemoteIP.Size = new System.Drawing.Size(128, 21);
-            this.txtRemoteIP.TabIndex = 1;
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
             // 
             // frmRemote
             // 
@@ -329,6 +385,7 @@
             this.darkSectionPanel2.PerformLayout();
             this.darkSectionPanel3.ResumeLayout(false);
             this.darkSectionPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +416,9 @@
         private DarkUI.Controls.DarkTextBox txtRemoteIP;
         private DarkUI.Controls.DarkLabel darkLabel9;
         private System.Windows.Forms.Timer timer1;
+        private DarkUI.Controls.DarkLabel darkLabel5;
+        private DarkUI.Controls.DarkButton btnApply;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

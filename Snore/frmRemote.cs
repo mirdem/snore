@@ -23,7 +23,34 @@ namespace Snore
         int dakika = 0;
         void IslemYap()
         {
+            try
+            {
+                if (radioShutdown.Checked == true)
+                {
+                    System.Diagnostics.Process.Start("shutdown", @"-m \\192.168.1.21 -s -f -t 0");
+                }
+                else
+              if (radioRestart.Checked == true)
+                {
+                    System.Diagnostics.Process.Start("shutdown", @"-m \\"+txtRemoteIP.Text+"-r -t 0");
+                //    Process.Start("shutdown", "/r /t 0");
+                }
+                else
+              if (radioLogOff.Checked == true)
+                {
+                //    ExitWindowsEx(0, 0);
+                }
+                else
+                    if (radioLock.Checked == true)
+                {
+                   // LockWorkStation();
+                }
+               
+            }
+            catch
+            {
 
+            }
         }
         void IslemYapNoTimer()
         {
@@ -57,6 +84,7 @@ namespace Snore
 
         private void btnSet_Click(object sender, EventArgs e)
         {
+            btnCancel.Enabled = true;
             try
             {
                 if (radioShutdown.Checked == false && radioRestart.Checked == false && radioLogOff.Checked == false && radioLock.Checked == false)
@@ -105,6 +133,35 @@ namespace Snore
         {
             timer1.Enabled = false;
             this.Hide();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            timer1.Enabled = false;
+            timer1.Stop();
+            lblCountdownMin.Text = "00";
+            lblCountdownSecond.Text = "00";
+            btnCancel.Enabled = false;
+            btnSet.Enabled = true;
+        }
+
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = new DialogResult();
+            dialog = MessageBox.Show("Do you want this Transaction to be applied immediately?", "Snore", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+            if (dialog == DialogResult.Yes)
+            {
+                IslemYapNoTimer();
+            }
+            else
+            {
+                MessageBox.Show("Process cancelled.","Snore",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Fill it like this: 192.168.1.100", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

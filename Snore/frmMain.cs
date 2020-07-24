@@ -58,7 +58,7 @@ namespace Snore
             {
                 RegistryKey key = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Run", true);
                 if (key.GetValue(ProgramAdi).ToString() == "\"" + Application.ExecutablePath + "\"")
-                { // Eğer regeditte varsa, checkbox ı işaretle
+                { 
                     chkWinStarts.Checked = true;
                 }
             }
@@ -269,7 +269,7 @@ namespace Snore
 
         private void lblBatteryLevel_Click(object sender, EventArgs e)
         {
-           // tabControl1.SelectedIndex = 0;
+    
         }
 
         private void darkButton1_Click(object sender, EventArgs e)
@@ -348,9 +348,17 @@ namespace Snore
         }
 
         private void btnRemote_Click(object sender, EventArgs e)
-        {        
+        {
+            btnStop.PerformClick();
             frmRemote frmRemote = new frmRemote();
             frmRemote.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            btnStop.PerformClick();
+            frmSchedule frmSchedule = new frmSchedule();
+            frmSchedule.Show();
         }
     }
 }

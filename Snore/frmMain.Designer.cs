@@ -74,11 +74,11 @@
             this.lblBatteryLevel = new DarkUI.Controls.DarkLabel();
             this.timerBattery = new System.Windows.Forms.Timer(this.components);
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.tabMain = new MetroFramework.Controls.MetroTabPage();
             this.tabBattery = new MetroFramework.Controls.MetroTabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.darkLabel11 = new DarkUI.Controls.DarkLabel();
-            this.tabSchedule = new System.Windows.Forms.TabPage();
+            this.tabMain = new MetroFramework.Controls.MetroTabPage();
+            this.btnRemote = new System.Windows.Forms.Button();
             this.tabSettings = new MetroFramework.Controls.MetroTabPage();
             this.txtWinStarts = new System.Windows.Forms.TextBox();
             this.btnSave = new DarkUI.Controls.DarkButton();
@@ -92,7 +92,7 @@
             this.darkLabel12 = new DarkUI.Controls.DarkLabel();
             this.darkLabel13 = new DarkUI.Controls.DarkLabel();
             this.CheckBattery = new System.Windows.Forms.Timer(this.components);
-            this.btnRemote = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.darkSectionPanel2.SuspendLayout();
@@ -101,8 +101,8 @@
             this.darkSectionPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDown1)).BeginInit();
             this.metroTabControl1.SuspendLayout();
-            this.tabMain.SuspendLayout();
             this.tabBattery.SuspendLayout();
+            this.tabMain.SuspendLayout();
             this.tabSettings.SuspendLayout();
             this.tabAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -564,7 +564,6 @@
             this.lblBatteryLevel.Size = new System.Drawing.Size(38, 18);
             this.lblBatteryLevel.TabIndex = 7;
             this.lblBatteryLevel.Text = "100";
-            this.lblBatteryLevel.Click += new System.EventHandler(this.lblBatteryLevel_Click);
             // 
             // timerBattery
             // 
@@ -575,7 +574,6 @@
             // 
             this.metroTabControl1.Controls.Add(this.tabMain);
             this.metroTabControl1.Controls.Add(this.tabBattery);
-            this.metroTabControl1.Controls.Add(this.tabSchedule);
             this.metroTabControl1.Controls.Add(this.tabSettings);
             this.metroTabControl1.Controls.Add(this.tabAbout);
             this.metroTabControl1.Location = new System.Drawing.Point(6, 27);
@@ -586,32 +584,6 @@
             this.metroTabControl1.TabIndex = 15;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTabControl1.UseSelectable = true;
-            // 
-            // tabMain
-            // 
-            this.tabMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.tabMain.Controls.Add(this.btnRemote);
-            this.tabMain.Controls.Add(this.darkSectionPanel1);
-            this.tabMain.Controls.Add(this.darkLabel5);
-            this.tabMain.Controls.Add(this.darkSectionPanel2);
-            this.tabMain.Controls.Add(this.darkLabel7);
-            this.tabMain.Controls.Add(this.lblCountdownSecond);
-            this.tabMain.Controls.Add(this.btnSysTray);
-            this.tabMain.Controls.Add(this.lblCountdownMin);
-            this.tabMain.Controls.Add(this.btnCloseApp);
-            this.tabMain.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.tabMain.HorizontalScrollbarBarColor = true;
-            this.tabMain.HorizontalScrollbarHighlightOnWheel = false;
-            this.tabMain.HorizontalScrollbarSize = 10;
-            this.tabMain.Location = new System.Drawing.Point(4, 38);
-            this.tabMain.Name = "tabMain";
-            this.tabMain.Size = new System.Drawing.Size(347, 359);
-            this.tabMain.TabIndex = 0;
-            this.tabMain.Text = "Main";
-            this.tabMain.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.tabMain.VerticalScrollbarBarColor = true;
-            this.tabMain.VerticalScrollbarHighlightOnWheel = false;
-            this.tabMain.VerticalScrollbarSize = 10;
             // 
             // tabBattery
             // 
@@ -637,7 +609,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(233, 295);
+            this.textBox1.Location = new System.Drawing.Point(359, 295);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 9;
@@ -655,14 +627,48 @@
             this.darkLabel11.TabIndex = 8;
             this.darkLabel11.Text = "%";
             // 
-            // tabSchedule
+            // tabMain
             // 
-            this.tabSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.tabSchedule.Location = new System.Drawing.Point(4, 38);
-            this.tabSchedule.Name = "tabSchedule";
-            this.tabSchedule.Size = new System.Drawing.Size(347, 359);
-            this.tabSchedule.TabIndex = 4;
-            this.tabSchedule.Text = "Schedule";
+            this.tabMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.tabMain.Controls.Add(this.button1);
+            this.tabMain.Controls.Add(this.btnRemote);
+            this.tabMain.Controls.Add(this.darkSectionPanel1);
+            this.tabMain.Controls.Add(this.darkLabel5);
+            this.tabMain.Controls.Add(this.darkSectionPanel2);
+            this.tabMain.Controls.Add(this.darkLabel7);
+            this.tabMain.Controls.Add(this.lblCountdownSecond);
+            this.tabMain.Controls.Add(this.btnSysTray);
+            this.tabMain.Controls.Add(this.lblCountdownMin);
+            this.tabMain.Controls.Add(this.btnCloseApp);
+            this.tabMain.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.tabMain.HorizontalScrollbarBarColor = true;
+            this.tabMain.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabMain.HorizontalScrollbarSize = 10;
+            this.tabMain.Location = new System.Drawing.Point(4, 38);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.Size = new System.Drawing.Size(347, 359);
+            this.tabMain.TabIndex = 0;
+            this.tabMain.Text = "Main";
+            this.tabMain.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabMain.VerticalScrollbarBarColor = true;
+            this.tabMain.VerticalScrollbarHighlightOnWheel = false;
+            this.tabMain.VerticalScrollbarSize = 10;
+            // 
+            // btnRemote
+            // 
+            this.btnRemote.BackColor = System.Drawing.Color.Transparent;
+            this.btnRemote.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.btnRemote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRemote.Image = ((System.Drawing.Image)(resources.GetObject("btnRemote.Image")));
+            this.btnRemote.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnRemote.Location = new System.Drawing.Point(3, 302);
+            this.btnRemote.Name = "btnRemote";
+            this.btnRemote.Size = new System.Drawing.Size(55, 55);
+            this.btnRemote.TabIndex = 13;
+            this.btnRemote.Text = "Remote";
+            this.btnRemote.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRemote.UseVisualStyleBackColor = false;
+            this.btnRemote.Click += new System.EventHandler(this.btnRemote_Click);
             // 
             // tabSettings
             // 
@@ -702,7 +708,7 @@
             // chkWinStarts
             // 
             this.chkWinStarts.AutoSize = true;
-            this.chkWinStarts.Location = new System.Drawing.Point(3, 26);
+            this.chkWinStarts.Location = new System.Drawing.Point(3, 20);
             this.chkWinStarts.Name = "chkWinStarts";
             this.chkWinStarts.Size = new System.Drawing.Size(181, 17);
             this.chkWinStarts.TabIndex = 2;
@@ -813,21 +819,21 @@
             this.CheckBattery.Interval = 500;
             this.CheckBattery.Tick += new System.EventHandler(this.CheckBattery_Tick);
             // 
-            // btnRemote
+            // button1
             // 
-            this.btnRemote.BackColor = System.Drawing.Color.Transparent;
-            this.btnRemote.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
-            this.btnRemote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemote.Image = ((System.Drawing.Image)(resources.GetObject("btnRemote.Image")));
-            this.btnRemote.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRemote.Location = new System.Drawing.Point(3, 302);
-            this.btnRemote.Name = "btnRemote";
-            this.btnRemote.Size = new System.Drawing.Size(55, 52);
-            this.btnRemote.TabIndex = 13;
-            this.btnRemote.Text = "Remote";
-            this.btnRemote.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRemote.UseVisualStyleBackColor = false;
-            this.btnRemote.Click += new System.EventHandler(this.btnRemote_Click);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(64, 302);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(61, 55);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Schedule";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmMain
             // 
@@ -858,10 +864,10 @@
             this.darkSectionPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.darkNumericUpDown1)).EndInit();
             this.metroTabControl1.ResumeLayout(false);
-            this.tabMain.ResumeLayout(false);
-            this.tabMain.PerformLayout();
             this.tabBattery.ResumeLayout(false);
             this.tabBattery.PerformLayout();
+            this.tabMain.ResumeLayout(false);
+            this.tabMain.PerformLayout();
             this.tabSettings.ResumeLayout(false);
             this.tabSettings.PerformLayout();
             this.tabAbout.ResumeLayout(false);
@@ -934,9 +940,9 @@
         private DarkUI.Controls.DarkCheckBox chkWinStarts;
         private DarkUI.Controls.DarkButton btnSave;
         private System.Windows.Forms.TextBox txtWinStarts;
-        private System.Windows.Forms.TabPage tabSchedule;
         private DarkUI.Controls.DarkLabel lblVersion;
         private System.Windows.Forms.Button btnRemote;
+        private System.Windows.Forms.Button button1;
     }
 }
 
