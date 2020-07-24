@@ -245,6 +245,7 @@ namespace Snore
             MyIcon.Icon = new Icon(Application.StartupPath+@"\data\images\sleep.ico");
             metroTabControl1.SelectedIndex = 0;
             lblVersion.Text = "Version " + this.ProductVersion;
+           
         }
 
         private void frmMain_Resize(object sender, EventArgs e)
@@ -350,15 +351,22 @@ namespace Snore
         private void btnRemote_Click(object sender, EventArgs e)
         {
             btnStop.PerformClick();
+            this.Hide();
             frmRemote frmRemote = new frmRemote();
             frmRemote.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSchedule_Click(object sender, EventArgs e)
         {
             btnStop.PerformClick();
-            frmSchedule frmSchedule = new frmSchedule();
-            frmSchedule.Show();
+            this.Hide();
+            frmZamanlayici frmZamanlayici = new frmZamanlayici();
+            frmZamanlayici.Show();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Saved.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
