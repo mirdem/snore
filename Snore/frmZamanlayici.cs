@@ -22,7 +22,6 @@ namespace Snore
             InitializeComponent();
    
         }
-       
 
         private bool dragging = false;
         private Point dragCursorPoint;
@@ -33,7 +32,8 @@ namespace Snore
             dragCursorPoint = Cursor.Position;
             dragFormPoint = this.Location;
         }
-
+     
+     
         void HourlyEnable()
         {
             Process cmd = new Process();
@@ -42,14 +42,12 @@ namespace Snore
             cmd.StartInfo.RedirectStandardOutput = true;
             cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
-
             cmd.Start();
-
-            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Hourly\\Snore Task\" /ENABLE");
-
+            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Hourly\\Snore Task Shutdown\" /ENABLE");
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
             cmd.WaitForExit();
+            MessageBox.Show("It was successfully enabled.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -61,14 +59,12 @@ namespace Snore
             cmd.StartInfo.RedirectStandardOutput = true;
             cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
-
             cmd.Start();
-
-            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Daily\\Snore Task\" /ENABLE");
-
+            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Daily\\Snore Task Shutdown\" /ENABLE");
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
             cmd.WaitForExit();
+            MessageBox.Show("It was successfully enabled.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         void WeeklyEnable()
@@ -79,14 +75,12 @@ namespace Snore
             cmd.StartInfo.RedirectStandardOutput = true;
             cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
-
             cmd.Start();
-
-            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Weekly\\Snore Task\" /ENABLE");
-
+            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Weekly\\Snore Task Shutdown\" /ENABLE");
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
             cmd.WaitForExit();
+            MessageBox.Show("It was successfully enabled.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -97,16 +91,14 @@ namespace Snore
             cmd.StartInfo.RedirectStandardInput = true;
             cmd.StartInfo.RedirectStandardOutput = true;
             cmd.StartInfo.CreateNoWindow = true;
-            cmd.StartInfo.UseShellExecute = false;
-          
+            cmd.StartInfo.UseShellExecute = false;         
             cmd.Start();
-
-           cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Hourly\\Snore Task\" /DISABLE");
-          
+            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Hourly\\Snore Task Shutdown\" /DISABLE");       
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
             cmd.WaitForExit();
-            
+            MessageBox.Show("It was successfully disabled.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         void DailyDisable()
@@ -117,14 +109,13 @@ namespace Snore
             cmd.StartInfo.RedirectStandardOutput = true;
             cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
-
             cmd.Start();
-
-            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Daily\\Snore Task\" /DISABLE");
-
+            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Daily\\Snore Task Shutdown\" /DISABLE");
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
             cmd.WaitForExit();
+            MessageBox.Show("It was successfully disabled.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
         }
         void WeeklyDisable()
@@ -135,14 +126,13 @@ namespace Snore
             cmd.StartInfo.RedirectStandardOutput = true;
             cmd.StartInfo.CreateNoWindow = true;
             cmd.StartInfo.UseShellExecute = false;
-
             cmd.Start();
-
-            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Weekly\\Snore Task\" /DISABLE");
-
+            cmd.StandardInput.WriteLine("SCHTASKS /CHANGE /TN \"Snore Weekly\\Snore Task Shutdown\" /DISABLE");
             cmd.StandardInput.Flush();
             cmd.StandardInput.Close();
             cmd.WaitForExit();
+            MessageBox.Show("It was successfully disabled.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
         }
         void HourlyEtkinlikKaydet()
@@ -161,6 +151,8 @@ namespace Snore
                 cmd.StandardInput.Flush();
                 cmd.StandardInput.Close();
                 cmd.WaitForExit();
+                MessageBox.Show("It was successfully saved.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 
@@ -180,6 +172,7 @@ namespace Snore
                 cmd.StandardInput.Flush();
                 cmd.StandardInput.Close();
                 cmd.WaitForExit();
+                MessageBox.Show("It was successfully saved.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -199,6 +192,8 @@ namespace Snore
                 cmd.StandardInput.Flush();
                 cmd.StandardInput.Close();
                 cmd.WaitForExit();
+                MessageBox.Show("It was successfully saved.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
         private void panel1_MouseUp(object sender, MouseEventArgs e)
@@ -230,12 +225,14 @@ namespace Snore
 
         private void btnSet_Click(object sender, EventArgs e)
         {
-            if(darkRadioButton1.Checked==false && darkRadioButton2.Checked==false && darkRadioButton3.Checked==false)
+            if(darkRadioButton1.Checked==false && darkRadioButton2.Checked==false && darkRadioButton3.Checked==false && radioShutdown.Checked==false&&radioRestart.Checked==false&& radioHibernate.Checked==false)
             {
                 MessageBox.Show("Please Select the action!", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            if(darkRadioButton1.Checked==true)
+
+            if (darkRadioButton1.Checked==true)
             {
+
                 DailyEtkinlikKaydet();
             }
             else
@@ -262,22 +259,21 @@ namespace Snore
 
         private void darkRadioButton2_Click(object sender, EventArgs e)
         {
-            txtAction.Text = "Hourly";
-            txtCommand.Text= "SCHTASKS /CREATE /SC HOURLY /TN \"Snore Hourly\\Snore Task\" /TR \"shutdown -L\" /ST " + timePicker.Value.ToShortTimeString();
-
+                txtAction.Text = "Hourly";
+                txtCommand.Text= "SCHTASKS /CREATE /SC HOURLY /TN \"Snore Hourly\\Snore Task Shutdown\" /TR \"shutdown -L\" /ST " + timePicker.Value.ToShortTimeString();        
         }
 
         private void darkRadioButton1_Click(object sender, EventArgs e)
         {
             txtAction.Text = "Daily";
-            txtCommand.Text = "SCHTASKS /CREATE /SC DAILY /TN \"Snore Daily\\Snore Task\" /TR \"shutdown -L\" /ST " + timePicker.Value.ToShortTimeString();
+            txtCommand.Text = "SCHTASKS /CREATE /SC DAILY /TN \"Snore Daily\\Snore Task Shutdown\" /TR \"shutdown -L\" /ST " + timePicker.Value.ToShortTimeString();
 
         }
 
         private void darkRadioButton3_Click(object sender, EventArgs e)
         {
             txtAction.Text = "Weekly";
-            txtCommand.Text = "SCHTASKS /CREATE /SC WEEKLY /TN \"Snore Weekly\\Snore Task\" /TR \"shutdown -L\" /ST " + timePicker.Value.ToShortTimeString();
+            txtCommand.Text = "SCHTASKS /CREATE /SC WEEKLY /TN \"Snore Weekly\\Snore Task Shutdown\" /TR \"shutdown -L\" /ST " + timePicker.Value.ToShortTimeString();
 
         }
 
@@ -322,6 +318,91 @@ namespace Snore
             this.Hide();
             frmMain frmMain = new frmMain();
             frmMain.Show();
+        }
+
+        private void radioShutdown_Click(object sender, EventArgs e)
+        {
+            if (darkRadioButton2.Checked == true)
+            {
+                txtAction.Text = "Hourly";
+                txtCommand.Text = "SCHTASKS /CREATE /SC HOURLY /TN \"Snore Hourly\\Snore Task Shutdown\" /TR \"shutdown -L\" /ST " + timePicker.Value.ToShortTimeString();
+            }
+            else
+            if (darkRadioButton1.Checked == true)
+            {
+                txtAction.Text = "Daily";
+                txtCommand.Text = "SCHTASKS /CREATE /SC HOURLY /TN \"Snore Hourly\\Snore Task Shutdown\" /TR \"shutdown -L\" /ST " + timePicker.Value.ToShortTimeString();
+            }
+            else
+                if (darkRadioButton3.Checked == true)
+            {
+                txtAction.Text = "Weekly";
+                txtCommand.Text = "SCHTASKS /CREATE /SC HOURLY /TN \"Snore Hourly\\Snore Task Shutdown\" /TR \"shutdown -L\" /ST " + timePicker.Value.ToShortTimeString();
+
+            }
+        }
+
+        private void radioRestart_Click(object sender, EventArgs e)
+        {
+            if (darkRadioButton2.Checked == true)
+            {
+                txtAction.Text = "Hourly";
+                txtCommand.Text = "SCHTASKS /CREATE /SC HOURLY /TN \"Snore Hourly\\Snore Task Restart\" /TR \"shutdown -r -t 00\" /ST " + timePicker.Value.ToShortTimeString();
+            }
+            else
+           if (darkRadioButton1.Checked == true)
+            {
+                txtAction.Text = "Daily";
+                txtCommand.Text = "SCHTASKS /CREATE /SC HOURLY /TN \"Snore Hourly\\Snore Task Restart\" /TR \"shutdown -r -t 00\" /ST " + timePicker.Value.ToShortTimeString();
+            }
+            else
+               if (darkRadioButton3.Checked == true)
+            {
+                txtAction.Text = "Weekly";
+                txtCommand.Text = "SCHTASKS /CREATE /SC HOURLY /TN \"Snore Hourly\\Snore Task Restart\" /TR \"shutdown -r -t 00\" /ST " + timePicker.Value.ToShortTimeString();
+
+            }
+        }
+
+        private void radioHibernate_Click(object sender, EventArgs e)
+        {
+            if (darkRadioButton2.Checked == true)
+            {
+                txtAction.Text = "Hourly";
+                txtCommand.Text = "SCHTASKS /CREATE /SC HOURLY /TN \"Snore Hourly\\Snore Task Hibernate\" /TR \"shutdown /h\" /ST " + timePicker.Value.ToShortTimeString();
+            }
+            else
+             if (darkRadioButton1.Checked == true)
+            {
+                txtAction.Text = "Daily";
+                txtCommand.Text = "SCHTASKS /CREATE /SC DAILY /TN \"Snore Hourly\\Snore Task Hibernate\" /TR \"shutdown /h\" /ST " + timePicker.Value.ToShortTimeString();
+            }
+            else
+            if (darkRadioButton3.Checked == true)
+            {
+                txtAction.Text = "Weekly";
+                txtCommand.Text = "SCHTASKS /CREATE /SC WEEKLY /TN \"Snore Hourly\\Snore Task Hibernate\" /TR \"shutdown /h\" /ST " + timePicker.Value.ToShortTimeString();
+
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine("SCHTASKS / DELETE / TN \"Snore Daily\\Snore Task Hibernate\"");
+            
+            cmd.StandardInput.WriteLine("YES");
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
+            
         }
     }
 }

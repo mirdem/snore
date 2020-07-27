@@ -368,5 +368,10 @@ namespace Snore
         {
             MessageBox.Show("Saved.", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
