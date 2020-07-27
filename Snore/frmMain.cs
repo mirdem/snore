@@ -106,7 +106,7 @@ namespace Snore
         void IslemYap()
         {
             btnStart.Enabled = true;
-
+            darkLabel5.Visible = false;
             try
             { 
                 if (radioShutdown.Checked == true)
@@ -202,6 +202,7 @@ namespace Snore
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            darkLabel5.Visible = true;
             timerBattery.Enabled = false;
             try
             {
@@ -210,13 +211,40 @@ namespace Snore
                     MessageBox.Show("Please Select the action!", "Snore", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                    btnStart.Enabled = false;
+
+            
+            
+            btnStart.Enabled = false;
             timer1.Start();
             dakika = Convert.ToInt32(txtTime.Text);
             }
             catch
             {
 
+            }
+            if(radioShutdown.Checked==true)
+            {
+                darkLabel5.Text = "Remaining time for Shutdown:";
+            }
+            else
+                if(radioRestart.Checked==true)
+            {
+                darkLabel5.Text = "Remaining time for Restart:";
+            }
+            else
+                if(radioLogOff.Checked==true)
+            {
+                darkLabel5.Text = "Remaining time for Logoff:";
+            }
+            else
+                if(radioLock.Checked==true)
+            {
+                darkLabel5.Text = "Remaining time for Lock:";
+            }
+            else
+                if(radioAlarm.Checked==true)
+            {
+                darkLabel5.Text = "Remaining time for Just alarm:";
             }
         }
 
@@ -226,6 +254,7 @@ namespace Snore
             timer1.Stop();
             lblCountdownMin.Text = "00";
             lblCountdownSecond.Text = "00";
+            darkLabel5.Visible = false;
         }
 
         private void btnSysTray_Click(object sender, EventArgs e)
@@ -241,6 +270,7 @@ namespace Snore
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.CustomFormat = "HH,mm";
             checkStarts();
             MyIcon.Icon = new Icon(Application.StartupPath+@"\data\images\sleep.ico");
             metroTabControl1.SelectedIndex = 0;
@@ -372,6 +402,17 @@ namespace Snore
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            string suankiSaat = DateTime.Now.ToShortTimeString();
+            string bitisSaati = dateTimePicker1.Value.ToShortTimeString();
+
+            TimeSpan fark = Convert.ToDateTime(bitisSaati) - Convert.ToDateTime(suankiSaat);
+
+           txtTime.Text= fark.TotalMinutes.ToString();
+
         }
     }
 }

@@ -93,6 +93,7 @@
             this.darkLabel12 = new DarkUI.Controls.DarkLabel();
             this.darkLabel13 = new DarkUI.Controls.DarkLabel();
             this.CheckBattery = new System.Windows.Forms.Timer(this.components);
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.darkSectionPanel2.SuspendLayout();
@@ -210,7 +211,7 @@
             this.txtTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(73)))), ((int)(((byte)(74)))));
             this.txtTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.txtTime.Location = new System.Drawing.Point(94, 36);
+            this.txtTime.Location = new System.Drawing.Point(111, 68);
             this.txtTime.MaxLength = 4;
             this.txtTime.Name = "txtTime";
             this.txtTime.Size = new System.Drawing.Size(100, 21);
@@ -220,7 +221,7 @@
             // 
             this.darkLabel3.AutoSize = true;
             this.darkLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel3.Location = new System.Drawing.Point(15, 38);
+            this.darkLabel3.Location = new System.Drawing.Point(32, 70);
             this.darkLabel3.Name = "darkLabel3";
             this.darkLabel3.Size = new System.Drawing.Size(73, 13);
             this.darkLabel3.TabIndex = 5;
@@ -228,6 +229,7 @@
             // 
             // darkSectionPanel2
             // 
+            this.darkSectionPanel2.Controls.Add(this.dateTimePicker1);
             this.darkSectionPanel2.Controls.Add(this.btnStopAlarm);
             this.darkSectionPanel2.Controls.Add(this.darkLabel6);
             this.darkSectionPanel2.Controls.Add(this.btnStop);
@@ -301,11 +303,12 @@
             this.darkLabel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.darkLabel5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.darkLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.darkLabel5.Location = new System.Drawing.Point(114, 225);
+            this.darkLabel5.Location = new System.Drawing.Point(98, 223);
             this.darkLabel5.Name = "darkLabel5";
             this.darkLabel5.Size = new System.Drawing.Size(102, 16);
             this.darkLabel5.TabIndex = 8;
             this.darkLabel5.Text = "Remaining time:";
+            this.darkLabel5.Visible = false;
             // 
             // btnCloseApp
             // 
@@ -635,7 +638,7 @@
             this.btnRemote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemote.Image = ((System.Drawing.Image)(resources.GetObject("btnRemote.Image")));
             this.btnRemote.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRemote.Location = new System.Drawing.Point(0, 242);
+            this.btnRemote.Location = new System.Drawing.Point(368, 238);
             this.btnRemote.Name = "btnRemote";
             this.btnRemote.Size = new System.Drawing.Size(65, 55);
             this.btnRemote.TabIndex = 13;
@@ -837,6 +840,15 @@
             this.CheckBattery.Interval = 500;
             this.CheckBattery.Tick += new System.EventHandler(this.CheckBattery_Tick);
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker1.Location = new System.Drawing.Point(111, 29);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(100, 21);
+            this.dateTimePicker1.TabIndex = 16;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -946,6 +958,7 @@
         private DarkUI.Controls.DarkLabel lblVersion;
         private System.Windows.Forms.Button btnRemote;
         private System.Windows.Forms.Button btnSchedule;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 

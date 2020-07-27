@@ -52,6 +52,7 @@
             this.radioHibernate = new DarkUI.Controls.DarkRadioButton();
             this.darkLabel5 = new DarkUI.Controls.DarkLabel();
             this.button1 = new System.Windows.Forms.Button();
+            this.darkLabel4 = new DarkUI.Controls.DarkLabel();
             this.darkSectionPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.darkSectionPanel2.SuspendLayout();
@@ -98,7 +99,7 @@
             this.darkSectionPanel1.Controls.Add(this.darkRadioButton2);
             this.darkSectionPanel1.Controls.Add(this.darkRadioButton3);
             this.darkSectionPanel1.Controls.Add(this.darkRadioButton1);
-            this.darkSectionPanel1.Location = new System.Drawing.Point(6, 34);
+            this.darkSectionPanel1.Location = new System.Drawing.Point(6, 50);
             this.darkSectionPanel1.Name = "darkSectionPanel1";
             this.darkSectionPanel1.SectionHeader = null;
             this.darkSectionPanel1.Size = new System.Drawing.Size(321, 123);
@@ -170,7 +171,7 @@
             // 
             // btnSet
             // 
-            this.btnSet.Location = new System.Drawing.Point(250, 163);
+            this.btnSet.Location = new System.Drawing.Point(250, 179);
             this.btnSet.Name = "btnSet";
             this.btnSet.Padding = new System.Windows.Forms.Padding(5);
             this.btnSet.Size = new System.Drawing.Size(75, 23);
@@ -180,7 +181,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(250, 193);
+            this.btnDelete.Location = new System.Drawing.Point(250, 209);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Padding = new System.Windows.Forms.Padding(5);
             this.btnDelete.Size = new System.Drawing.Size(75, 45);
@@ -211,7 +212,7 @@
             // 
             // darkButton2
             // 
-            this.darkButton2.Location = new System.Drawing.Point(250, 243);
+            this.darkButton2.Location = new System.Drawing.Point(250, 259);
             this.darkButton2.Name = "darkButton2";
             this.darkButton2.Padding = new System.Windows.Forms.Padding(5);
             this.darkButton2.Size = new System.Drawing.Size(75, 45);
@@ -295,12 +296,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // darkLabel4
+            // 
+            this.darkLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.darkLabel4.Location = new System.Drawing.Point(10, 366);
+            this.darkLabel4.Name = "darkLabel4";
+            this.darkLabel4.Size = new System.Drawing.Size(203, 28);
+            this.darkLabel4.TabIndex = 18;
+            this.darkLabel4.Text = "The actions here are only to turn off the Computer.";
+            // 
             // frmZamanlayici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(332, 401);
+            this.Controls.Add(this.darkLabel4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.darkSectionPanel2);
             this.Controls.Add(this.btnClose);
@@ -354,5 +365,6 @@
         public System.Windows.Forms.TextBox txtAction;
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private DarkUI.Controls.DarkLabel darkLabel4;
     }
 }
